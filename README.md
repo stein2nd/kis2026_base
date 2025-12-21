@@ -1,3 +1,3 @@
 # kis2026
 
-Block theme for KIS
+This is Block theme base for KIS.
