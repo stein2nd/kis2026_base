@@ -1,0 +1,41 @@
+{
+  "name": "kis2026_base",
+  "version": "1.0.0",
+  "description": "Block theme base for KIS.",
+  "type": "commonjs",
+  "author": "Koutarou ISHIKAWA",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stein2nd/kis2026_base.git"
+  },
+  "homepage": "https://github.com/stein2nd/kis2026_base#readme",
+  "bugs": {
+    "url": "https://github.com/stein2nd/kis2026_base/issues"
+  },
+  "keywords": [
+    "wordpress",
+    "blocktheme"
+  ],
+  "directories": {
+    "doc": "docs"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.33",
+    "@types/node": "^25.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.50.0",
+    "@typescript-eslint/parser": "^8.50.0",
+    "autoprefixer": "^10.4.23",
+    "eslint": "^9.39.2",
+    "rollup": "^4.54.0",
+    "sass": "^1.97.1",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  }
+}
