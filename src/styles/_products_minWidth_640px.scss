@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+@media screen and (width >= 640px) {
+  .productsContent .productsContentCol .productsContentItem:hover img {
+    opacity: 0.6;
+  }
+
+  .productsContent .productsContentCol .productsContentItem.productsContentItem--g a:hover {
+    background-color: #efefef;
+  }
+}
