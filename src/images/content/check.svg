@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="19.91" viewBox="0 0 21 19.91">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #999;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="check.svg" class="cls-1" d="M450,1291.1h20V1310H450v-18.9Z" transform="translate(-449.5 -1290.59)"/>
+</svg>
