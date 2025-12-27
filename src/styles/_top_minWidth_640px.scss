@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+@media screen and (width >= 640px) {
+  .compoCard a:hover .compoCard__thumb img {
+    transform: scale(1.15);
+  }
+}
