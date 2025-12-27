@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+.pageContent {
+  .eventLead {
+    margin-bottom: 1.875rem;
+
+    p {
+      font-size: 1.4rem;
+    }
+
+    .button--a {
+      padding: 0.9375rem 2.5rem;
+      font-size: 1.8rem;
+
+      .icon {
+        position: absolute;
+        right: 0.9375rem;
+        top: 50%;
+        margin-top: -0.25rem;
+        width: 0.5rem;
+        height: 0.5rem;
+      }
+    }
+  }
+
+  .eventRegisterButton {
+    margin-top: 1.25rem;
+    margin-bottom: 3.75rem;
+    text-align: center;
+
+    .button--a {
+      padding: 1.5625rem 2.5rem;
+      font-size: 2rem;
+      min-width: 25rem;
+
+      .icon {
+        position: absolute;
+        right: 1.25rem;
+        top: 50%;
+        margin-top: -0.25rem;
+        width: 0.625rem;
+        height: 0.625rem;
+      }
+    }
+  }
+
+  .eventForm {
+    font-size: 1.6rem;
+
+    .eventForm_lead {
+      margin-bottom: 1.5625rem;
+
+      p {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
