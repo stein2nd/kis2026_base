@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+@media screen and (width <= 640px) {
+  #wrapper {
+    .compoFooterBanner {
+      padding: 5%;
+      padding-bottom: 0.5%;
+
+      .compoFooterBanner__items {
+        text-align: center;
+
+        li {
+          margin-right: 0;
+          margin-bottom: 5%;
+          width: 48%;
+
+          &:nth-child(2n) {
+            float: right;
+          }
+        }
+      }
+    }
+
+    .compoCard {
+      .compoCard__content {
+        padding: 6% 7% 12% 7%;
+
+        .compoCard__title {
+          margin-bottom: 0;
+          font-size: 2.8vw;
+
+          .string {
+            margin-bottom: 0;
+            padding-top: 0;
+            font-size: 3.6vw;
+            min-height: 0;
+          }
+        }
+
+        .compoCard__img {
+          margin-bottom: 0;
+        }
+      }
+
+      &.compoCard--full {
+        display: block;
+        width: 48% !important;
+
+        .compoCard__thumb,
+        .compoCard__content {
+          display: block;
+          vertical-align: top;
+        }
+
+        .compoCard__thumb {
+          width: auto;
+        }
+      }
+    }
+
+    .wrapCompoRecentPost {
+      margin: 2.5rem 0;
+    }
+
+    .compoRecentPost {
+      margin-bottom: 3.75rem;
+      padding: 0;
+      padding-top: 0;
+      border: 0;
+      border-top: 0;
+
+      .compoRecentPost__items {
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 0.9375rem;
+        border-top: 0;
+
+        li {
+          &:last-child {
+            padding-bottom: 0;
+            border-bottom: 0;
+          }
+
+          time {
+            font-size: 2.4vw;
+          }
+        }
+      }
+
+      .compoRecentPost__header {
+        margin-right: 0;
+        margin-left: 0;
+        position: relative;
+        margin-bottom: 0;
+        padding-left: 0;
+        text-align: center;
+
+        .string {
+          font-size: 4.8vw;
+        }
+
+        small {
+          font-size: 2vw;
+        }
+      }
+
+      .button--default {
+        position: relative;
+        width: 100%;
+        bottom: inherit;
+      }
+    }
+  }
+}
