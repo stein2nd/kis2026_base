@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+@media screen and (width <= 640px) {
+  #wrapper {
+    ul,
+    ol,
+    p,
+    dt,
+    dd,
+    caption,
+    th,
+    td,
+    select,
+    input,
+    textarea,
+    button,
+    figcaption {
+      font-size: 4vw;
+    }
+  }
+
+  .pageContent {
+    input {
+      &[type='text'],
+      &[type='email'],
+      &[type='password'] {
+        width: 100%;
+      }
+    }
+
+    textarea {
+      width: 100%;
+    }
+  }
+
+  select {
+    width: 100%;
+    height: 40px;
+  }
+}
