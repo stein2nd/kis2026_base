@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="267" height="41" viewBox="0 0 267 41">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000039;
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+        opacity: 0.5;
+      }
+    </style>
+  </defs>
+  <path id="button_c_bg.svg" class="cls-1" d="M935,2569.08L945,2559h256v30l-10,10H935v-29.92Z" transform="translate(-934.5 -2558.5)"/>
+</svg>
