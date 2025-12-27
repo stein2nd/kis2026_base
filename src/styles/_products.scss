@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+.productsContent {
+  .headerBWrap {
+    margin-top: 1.25rem;
+  }
+
+  .productsContentCol .productsContentItem {
+    margin-bottom: 1.875rem;
+
+    a {
+      display: block;
+    }
+
+    .thumb {
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+
+      img {
+        transition: all 0.15s ease-out;
+      }
+    }
+
+    p {
+      font-size: 1.4rem;
+
+      b {
+        display: block;
+        font-size: 1.6rem;
+      }
+    }
+
+    .more {
+      /* margin-top: 0.625rem; */
+
+      text-align: right;
+      vertical-align: middle;
+
+      color: #000080;
+      font-weight: bold;
+
+      .icon--circleArrowBL {
+
+        /* margin-top: 0.75rem; */
+
+        margin-left: 0.3rem;
+      }
+    }
+
+    &.productsContentItem--g {
+      a {
+        background-color: #e4e4e4;
+        padding: 1.875rem;
+        transition: background 0.15s ease-out;
+      }
+
+      dt {
+        margin-bottom: 0.625rem;
+        line-height: 1.6;
+
+        small {
+          font-size: 1.8rem;
+        }
+
+        .string {
+          display: block;
+          font-size: 2rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
