@@ -1,0 +1,16 @@
+<svg id="checked.svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1c4ea0;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="cube" class="cls-1" width="20" height="20"/>
+  <path id="check" class="cls-2" d="M459,1268.78l-5.062-5.06,1.306-1.3,3.756,3.75h0l6.247-6.25,1.306,1.31L459,1268.78h0Z" transform="translate(-450 -1254.5)"/>
+</svg>
