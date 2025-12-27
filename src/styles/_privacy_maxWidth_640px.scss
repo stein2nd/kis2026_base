@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@media screen and (width <= 640px) {
+  #wrapper .privacyContent section {
+    margin-bottom: 30px;
+    padding-bottom: 0;
+    border-bottom: 0;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
+}
