@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.mw_wp_form_confirm .innerTable th {
+  display: none;
+}
+
+.mw_wp_form_confirm {
+  .wrapSubmit__button {
+    width: 12.5rem;
+  }
+
+  .button.button--e {
+    padding: 1.25rem;
+    margin-right: 1.25rem;
+    width: 12.5rem;
+    min-width: 0;
+    font-size: 1.8rem;
+  }
+}
