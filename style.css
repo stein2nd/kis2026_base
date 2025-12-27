@@ -1,0 +1,8 @@
+/*
+Theme Name: KIS 2026 Base
+Version: 1.0
+Author: KIS
+*/
+@import 'https://fonts.googleapis.com/earlyaccess/notosansjapanese.css';
+@import './dist/css/style.css';
+@import "./dist/css/slick.css";
