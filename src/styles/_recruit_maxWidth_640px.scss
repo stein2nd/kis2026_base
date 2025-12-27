@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+@media screen and (width <= 640px) {
+  #wrapper {
+    .pageContent {
+      padding-bottom: 0;
+    }
+
+    .recruitContent {
+      .recruitUnit {
+        margin-bottom: 3.125rem;
+      }
+
+      .recruitMbt,
+      .flex--col2 .flex__item {
+        margin-bottom: 1.25rem;
+      }
+
+      .recruitBanner {
+        margin-top: 1.5625rem;
+        margin-bottom: 3.125rem;
+
+        .box--r {
+          padding: 5% 5.5%;
+          width: auto;
+
+          p {
+            font-size: 9.2vw;
+
+            b {
+              letter-spacing: 0.6rem;
+            }
+          }
+
+          small {
+            font-size: 3.6vw;
+          }
+        }
+      }
+
+      .recruitFig {
+        margin: 5%;
+        margin-bottom: 0;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .compoDefin {
+        margin-bottom: 0;
+        padding-bottom: 0.625rem;
+        padding-top: 0.625rem;
+        border-bottom: 1px solid #ccc;
+
+        dt {
+          margin-bottom: 0.3125rem;
+          padding-bottom: 0;
+          border-bottom: 0;
+        }
+
+        &.compoDefin--last {
+          border-bottom: 0;
+        }
+      }
+
+      .recruitMsg {
+        margin-top: 3.75rem;
+
+        figure {
+          .box--r {
+            padding-top: 0;
+          }
+
+          img {
+            vertical-align: bottom;
+          }
+        }
+
+        .recruitMsg__header {
+          padding: 0.625rem 0;
+
+          .string {
+            display: block;
+            margin: 0;
+            font-size: 6.4vw;
+          }
+        }
+
+        .recruitMsg__items {
+          > li {
+            padding: 0.625rem 0;
+          }
+
+          .recruitMsg__item {
+            display: block;
+            width: 100%;
+
+            header,
+            .recruitMsg__body {
+              display: block;
+              vertical-align: middle;
+              padding: 1.25rem 1.875rem;
+            }
+
+            header {
+              width: auto;
+              border-right: 0;
+              padding: 0.5rem 0;
+
+              .string {
+                font-size: 4.4vw;
+              }
+            }
+
+            .recruitMsg__body {
+              padding: 0;
+
+              dt,
+              ul,
+              p,
+              dd {
+                font-size: 4vw;
+              }
+            }
+
+            .listDefault li {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .recruitContent__contact {
+      padding: 8% 5%;
+
+      h2 {
+        margin-bottom: 0.625rem;
+        font-size: 3.36vw;
+      }
+
+      .recruitContent__contact__item {
+        margin-bottom: 1.25rem;
+        padding: 6% 2%;
+        padding: 1.25rem;
+        background: #fff;
+
+        .string {
+          margin-bottom: 0.9375rem;
+          padding-bottom: 0.25rem;
+          font-size: 4.8vw;
+
+          .icon {
+            top: 0.4375rem;
+            margin-right: 0.375rem;
+          }
+        }
+      }
+
+      .recruitContent__contact {
+        background: #f0f0f0;
+        padding: 1.875rem;
+
+        h2 {
+          margin-bottom: 1.5625rem;
+          font-weight: normal;
+          font-size: 2.2rem;
+          text-align: center;
+        }
+      }
+
+      .recruitContent__contact__tel {
+        display: inline-block;
+        text-align: left;
+
+        b {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+}
