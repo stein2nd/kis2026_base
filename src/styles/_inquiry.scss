@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.pageContent {
+  .pageTitle .string {
+    line-height: 1.3;
+  }
+
+  .inquiryForm_lead {
+    margin-bottom: 0.625rem;
+    text-align: center;
+
+    p {
+      font-size: 1.4rem;
+    }
+  }
+}
