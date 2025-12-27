@@ -13,9 +13,6 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
 
-    /* ===== JSX ===== */
-    "jsx": "preserve",
-
     /* ===== 厳格性 ===== */
     "strict": true,
     "noUnusedLocals": true,
@@ -33,24 +30,23 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@editor/*": ["src/editor/*"],
-      "@frontend/*": ["src/frontend/*"],
+      "@scripts/*": ["src/scripts/*"],
       "@styles/*": ["src/styles/*"],
-      "@blocks/*": ["assets/blocks/*"],
       "@types/*": ["src/types/*"]
     },
 
     /* ===== 型定義 ===== */
     "types": [
-      "node"
+      "node",
+      "jquery"
     ]
   },
 
   "include": [
-    "src/**/*",
-    "assets/blocks/**/*",
+    "src/scripts/**/*",
     "src/types/**/*.d.ts",
-    "vite.config.ts"
+    "vite.config.ts",
+    "eslint.config.ts"
   ],
 
   "exclude": [
