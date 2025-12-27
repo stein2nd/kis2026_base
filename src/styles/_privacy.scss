@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.privacyContent section {
+  margin-bottom: 1.875rem;
+  padding-bottom: 1.875rem;
+  border-bottom: 1px solid #bfbfbf;
+
+  &:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  h2 {
+    margin-bottom: 1.25rem;
+    padding-left: 0.625rem;
+    font-size: 1.6rem;
+    border-left: 0.3125rem solid #000;
+    color: #000;
+    line-height: 1.4;
+  }
+
+  ul,
+  p {
+    font-size: 1.4rem;
+  }
+}
