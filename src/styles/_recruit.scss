@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+.recruitContent {
+  .recruitUnit {
+    margin-bottom: 3.75rem;
+  }
+
+  .recruitMbt {
+    margin-bottom: 1.875rem;
+
+    p {
+      font-size: 1.4rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .flex--col2 .flex__item {
+    margin-bottom: 1.25rem;
+  }
+
+  .recruitBanner {
+    background-color: #00a4dc;
+    margin-bottom: 5rem;
+    color: #fff;
+
+    .box--r {
+      padding: 3.125rem 2.5rem 0 2.5rem;
+      width: 50%;
+      text-align: center;
+
+      p {
+        margin-bottom: 1.25rem;
+        font-size: 4.8rem;
+
+        b {
+          letter-spacing: 0.8rem;
+        }
+      }
+
+      small {
+        display: block;
+        font-size: 1.6rem;
+        letter-spacing: 0.3rem;
+      }
+
+      li {
+        margin-bottom: 0.625rem;
+      }
+    }
+  }
+
+  .compoDefin {
+    margin-bottom: 1.875rem;
+  }
+
+  .recruitMsg {
+    margin-top: 3.75rem;
+
+    figure .box--r {
+      /* padding-top: 24px; */
+    }
+
+    .recruitMsg__header {
+      padding: 2.1875rem 1.875rem;
+
+      .string {
+        display: inline-block;
+        margin-right: 1.875rem;
+        color: #000080;
+        font-size: 2.4rem;
+      }
+
+      .props {
+        display: inline-block;
+      }
+    }
+
+    .recruitMsg__items {
+      border-top: 1px solid #999;
+
+      > li {
+        padding: 1.25rem 0;
+        border-bottom: 1px solid #999;
+      }
+
+      .recruitMsg__item {
+        display: table;
+        width: 100%;
+
+        header,
+        .recruitMsg__body {
+          display: table-cell;
+          vertical-align: middle;
+          padding: 1.25rem 1.875rem;
+        }
+
+        header {
+          color: #000080;
+          width: 16.875rem;
+          border-right: 1px solid #ccc;
+          padding: 1.25rem;
+        }
+
+        .recruitMsg__body {
+          padding: 1.25rem 1.875rem;
+
+          dt {
+            font-size: 1.6rem;
+            font-weight: bold;
+          }
+
+          ul,
+          p,
+          dd {
+            font-size: 1.4rem;
+          }
+        }
+
+        .listDefault li {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .recruitContent__contact {
+    background: #f0f0f0;
+    padding: 1.875rem;
+
+    h2 {
+      margin-bottom: 1.5625rem;
+      font-weight: normal;
+      font-size: 2.2rem;
+      text-align: center;
+    }
+
+    .recruitContent__contact__item {
+      background: #fff;
+      padding: 1.25rem;
+
+      .string {
+        margin-bottom: 1.875rem;
+        padding-bottom: 0.75rem;
+        font-size: 2rem;
+        color: #01a6de;
+        text-align: center;
+        border-bottom: 1px solid #999;
+
+        .icon {
+          top: 0.4375rem;
+          margin-right: 0.375rem;
+        }
+      }
+    }
+
+    .recruitContent__contact {
+      background: #f0f0f0;
+      padding: 1.875rem;
+
+      h2 {
+        margin-bottom: 1.5625rem;
+        font-weight: normal;
+        font-size: 2.2rem;
+        text-align: center;
+      }
+    }
+
+    .recruitContent__contact__tel {
+      display: inline-block;
+      text-align: left;
+
+      b {
+        font-size: 2.4rem;
+      }
+    }
+  }
+}
