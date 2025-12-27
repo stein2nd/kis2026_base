@@ -1,0 +1,19 @@
+<svg id="icon_sc.svg" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f90;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="b" class="cls-1" d="M954,5600a13,13,0,1,1,13,13A13,13,0,0,1,954,5600Z" transform="translate(-954 -5587)"/>
+  <path id="c" class="cls-2" d="M974.256,5594H959.744a0.732,0.732,0,0,0-.744.72v9.47a0.732,0.732,0,0,0,.744.72h4.762v1.4h-0.97V5607h6.928v-0.69h-0.97v-1.4h4.762a0.732,0.732,0,0,0,.744-0.72v-9.47A0.732,0.732,0,0,0,974.256,5594Zm-0.474,9.44H960.217v-8.26h13.565v8.26Z" transform="translate(-954 -5587)"/>
+</svg>
