@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+@media screen and (width >= 640px) {
+  .pageContent .compoArticleItems .item a:hover {
+    text-decoration: none;
+
+    .item__photo div {
+      transform: scale(1.15);
+    }
+  }
+}
