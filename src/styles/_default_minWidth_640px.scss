@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+@media screen and (width >= 640px) {
+  .pageContent input[type='submit']:hover {
+    background-color: #1fbef5;
+  }
+
+  .wrapper a {
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.resetHover:hover {
+      text-decoration: none;
+
+      img {
+        opacity: 1;
+      }
+    }
+  }
+
+  a:hover img {
+    opacity: 0.6;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+  input {
+    &[type='submit']:hover,
+    &[type='button']:hover,
+    &[type='reset']:hover {
+      opacity: 0.8;
+    }
+  }
+}
