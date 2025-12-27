@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+@media screen and (width <= 640px) {
+  #wrapper .productsContent .productsContentCol .productsContentItem {
+    .thumb {
+      margin-bottom: 10px;
+    }
+
+    .more .icon--circleArrowBL {
+      margin-top: 0.75rem;
+    }
+
+    &.productsContentItem--g {
+      a {
+        padding: 8%;
+      }
+
+      dt {
+        margin-bottom: 5px;
+
+        small {
+          font-size: 3.6vw;
+        }
+
+        .string {
+          font-size: 4.8vw;
+        }
+      }
+    }
+
+    p b {
+      font-size: 4.4vw;
+    }
+  }
+}
