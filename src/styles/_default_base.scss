@@ -1,0 +1,372 @@
+@charset "UTF-8";
+
+.screen-reader-text {
+  display: none;
+}
+
+/* CSS初期化のスタイルを記載 */
+
+html,
+body {
+  font-size: 0.625rem;
+  font-family: 'Noto Sans Japanese', sans-serif;
+  line-height: 1.6;
+  font-feature-settings: 'palt' 1;
+  text-size-adjust: 100%;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+section,
+article,
+aside,
+hgroup,
+header,
+footer,
+nav,
+dialog,
+figure,
+menu,
+video,
+audio,
+mark,
+time,
+canvas,
+details {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+main,
+section,
+aside,
+figure,
+header,
+footer {
+  display: block;
+}
+
+ul,
+ol,
+p,
+dt,
+dd,
+caption,
+th,
+td,
+select,
+input,
+textarea,
+button,
+figcaption {
+  font-size: 1.6rem;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 0;
+  transition: opacity 0.5s ease;
+}
+
+input {
+  &[type='submit'],
+  &[type='button'],
+  &[type='reset'] {
+    cursor: pointer;
+    border: 0;
+    border-radius: 0;
+    transition: opacity 0.5s ease;
+  }
+}
+
+section,
+article,
+aside,
+hgroup,
+header,
+footer,
+nav,
+dialog,
+figure,
+figcaption {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote {
+  &::before,
+  &::after {
+    content: '';
+    content: none;
+  }
+}
+
+q {
+  &::before,
+  &::after {
+    content: '';
+    content: none;
+  }
+}
+
+ins {
+  /* remember to highlight inserts somehow! */
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+table {
+  /* markup tables with 'cellspacing="0"' */
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto !important;
+}
+
+a {
+  color: #444;
+  text-decoration: none;
+
+  img {
+    transition: opacity 0.5s ease;
+  }
+}
+
+.wrapInput {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+  text-align: center;
+  text-indent: -9999px;
+  margin-right: 0.625rem;
+
+  &.wrapInput--radio {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid #a7a7a7;
+    border-radius: 1000px;
+
+    &.wrapInput--checked::before {
+      position: absolute;
+      left: 0.125rem;
+      top: 0.125rem;
+      content: '';
+      display: inline-block;
+      background: #1c4ea0;
+      width: 0.5625rem;
+      height: 0.5625rem;
+      border-radius: 1000px;
+    }
+  }
+
+  &.wrapInput--checkbox {
+    background: #fff;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid #a7a7a7;
+
+    &.wrapInput--checked {
+      border-color: #1c4ea0;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+        display: inline-block;
+        background: url("../images/icon/icon-checked.svg");
+        background-size: 100% auto;
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+  }
+}
+
+select {
+  width: 50%;
+  height: 3.75rem;
+}
+
+.pageContent {
+  input {
+    &[type='text'],
+    &[type='email'],
+    &[type='password'] {
+      padding: 0.9375rem;
+      border: 1px solid #999;
+      width: 80%;
+    }
+
+    &[type='text']::-webkit-input-placeholder,
+    &[type='email']::-webkit-input-placeholder,
+    &[type='password']::-webkit-input-placeholder {
+      color: #999;
+    }
+
+    &[type='text']:-moz-placeholder,
+    &[type='email']:-moz-placeholder,
+    &[type='password']:-moz-placeholder {
+      color: #999;
+    }
+
+    &[type='text']::-moz-placeholder,
+    &[type='email']::-moz-placeholder,
+    &[type='password']::-moz-placeholder {
+      color: #999;
+    }
+
+    &[type='text']:-ms-input-placeholder,
+    &[type='email']:-ms-input-placeholder,
+    &[type='password']:-ms-input-placeholder {
+      color: #999;
+    }
+
+    &[type='text']:placeholder-shown,
+    &[type='email']:placeholder-shown,
+    &[type='password']:placeholder-shown {
+      color: #999;
+    }
+  }
+
+  textarea {
+    padding: 0.9375rem;
+    border: 1px solid #999;
+    width: 80%;
+  }
+
+  textarea::-webkit-input-placeholder {
+    color: #999;
+  }
+
+  textarea:-moz-placeholder {
+    color: #999;
+  }
+
+  textarea::-moz-placeholder {
+    color: #999;
+  }
+
+  textarea:-ms-input-placeholder {
+    color: #999;
+  }
+
+  textarea:placeholder-shown {
+    color: #999;
+  }
+
+  input[type='submit'] {
+    position: relative;
+    background-color: #01a5dd;
+    padding: 1.25rem;
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    transition: all 0.25s ease;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Clearfix */
+
+.clr {
+  zoom: 1;
+
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+  }
+}
+
+/* display:none */
+
+.disnon {
+  display: none;
+}
