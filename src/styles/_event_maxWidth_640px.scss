@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@media screen and (width <= 640px) {
+  #wrapper .pageContent {
+    .eventLead {
+      .button--a {
+        font-size: 4.8vw;
+      }
+
+      .box {
+        margin-bottom: 30px;
+      }
+
+      .box--r {
+        text-align: center;
+      }
+    }
+
+    .eventRegisterButton .button--a {
+      font-size: 4.8vw;
+      min-width: 0;
+      width: 80%;
+    }
+  }
+}
