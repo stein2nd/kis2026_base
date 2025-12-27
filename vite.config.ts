@@ -11,37 +11,6 @@ if (process.env.FLUSH_DIST === 'true') {
   rmSync('dist', { recursive: true, force: true });
 }
 
-/**
- * build target 判定
- * npm run build:editor / build:frontend
- */
-const getBuildTarget = () => {
-  const script = process.env.npm_lifecycle_event;
-  if (script?.includes('editor')) return 'editor';
-  if (script?.includes('frontend')) return 'frontend';
-  return 'frontend';
-};
-
-const target = getBuildTarget();
-
-/**
- * テーマ用ビルド設定（React 非依存）
- */
-const configMap = {
-  editor: {
-    entry: resolve(__dirname, 'src/editor/index.ts'),
-    jsName: 'editor.js',
-    cssName: 'editor.css',
-  },
-  frontend: {
-    entry: resolve(__dirname, 'src/frontend/index.ts'),
-    jsName: 'frontend.js',
-    cssName: 'style.css',
-  }
-};
-
-const buildConfig = configMap[target];
-
 export default defineConfig({
   logLevel: (process.env.VITE_LOG_LEVEL as any) || 'warn',
 
@@ -54,28 +23,37 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: false,
 
-    /**
-     * WordPress enqueue 前提の単一 IIFE
-     */
-    lib: {
-      entry: buildConfig.entry,
-      formats: ['iife'],
-      name: 'ThemeBundle',
-    },
-
     rollupOptions: {
       /**
-       * WordPress コア JS はすべて外部化
-       * （Interactivity API 含む）
+       * エントリーポイント: JS（CSSはJSからインポート）
+       * IIFE形式で複数のエントリーポイントを使う場合の制約を回避するため、
+       * CSSエントリーポイントを削除し、JSエントリーポイントからCSSをインポート
+       */
+      input: {
+        index: resolve(__dirname, 'src/scripts/index.ts'),
+      },
+
+      /**
+       * WordPress コア JS と jQuery は外部化
        */
       external: (id) => {
         if (id.startsWith('@wordpress/')) return true;
+        if (id === 'jquery') return true;
         return false;
       },
 
       output: {
         /**
-         * @wordpress/* → wp.*
+         * WordPress enqueue 前提の単一 IIFE
+         * 単一のエントリーポイント（JS）からCSSもインポートされるため、
+         * inlineDynamicImports を true に設定してコード分割を無効化
+         */
+        format: 'iife',
+        inlineDynamicImports: true,
+        name: 'ThemeBundle',
+
+        /**
+         * 外部モジュールのグローバル変数マッピング
          */
         globals: (id) => {
           if (id.startsWith('@wordpress/')) {
@@ -84,15 +62,17 @@ export default defineConfig({
             if (id === '@wordpress/i18n') return 'wp.i18n';
             return `wp.${mod}`;
           }
+          if (id === 'jquery') return 'jQuery';
           return id;
         },
 
-        entryFileNames: `js/${buildConfig.jsName}`,
+        entryFileNames: 'js/index.js',
         chunkFileNames: 'js/[name]-[hash].js',
 
         assetFileNames: (asset) => {
           if (asset.name?.endsWith('.css')) {
-            return `css/${buildConfig.cssName}`;
+            // JS からインポートされた CSS を style.css として出力
+            return 'css/style.css';
           }
           return 'assets/[name][extname]';
         },
@@ -117,20 +97,24 @@ export default defineConfig({
 
   plugins: [
     /**
-     * テーマ資産を dist へコピー
+     * サードパーティ製ライブラリを dist へコピー
      */
     viteStaticCopy({
       targets: [
         {
-          src: 'assets/blocks/**/block.json',
-          dest: 'blocks'
+          src: 'src/thirdparties/scripts/*',
+          dest: 'js',
         },
         {
-          src: 'patterns/**/*.php',
-          dest: 'patterns'
-        }
-      ]
-    })
+          src: 'src/thirdparties/styles/*',
+          dest: 'css',
+        },
+        {
+          src: 'src/images/**/*.*',
+          dest: 'assets',
+        },
+      ],
+    }),
   ],
 
   css: {
@@ -141,16 +125,16 @@ export default defineConfig({
             'last 2 versions',
             '> 1%',
             'not dead',
-            'not ie 11'
-          ]
-        })
-      ]
-    }
+            'not ie 11',
+          ],
+        }),
+      ],
+    },
   },
 
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
-    }
-  }
+    },
+  },
 });
