@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+@media screen and (width <= 640px) {
+  #wrapper .pageContent {
+
+/*
+    .icon--tag {
+      width: 8.5rem;
+      height: 1.5625rem;
+      font-size: 1.12rem;
+      line-height: 1.5625rem;
+    }
+*/
+
+    .compoArticleItems .item {
+      width: 100%;
+
+      a {
+        padding: 5%;
+        padding-bottom: 3.75rem;
+      }
+
+      .item__header {
+        margin-bottom: 0.625rem;
+        padding: 0.625rem 0;
+
+        .string {
+          padding-right: 9.0625rem;
+          font-size: 4.4vw;
+        }
+
+        .item__cat {
+          right: 0;
+          top: 0.8125rem;
+        }
+      }
+
+      .item__logo img {
+        max-width: 60%;
+      }
+
+      .item__props {
+        th,
+        td {
+          font-size: 4vw;
+        }
+      }
+    }
+
+    .compoCaseArticle {
+      .compoCaseArticle__first {
+        display: block;
+        padding-top: 8%;
+
+        .cell {
+          display: block;
+        }
+
+        .item__headers {
+          padding-right: 0;
+          width: auto;
+
+          .string {
+            padding-right: 9.375rem;
+          }
+
+          .item__cat {
+            right: 0;
+            top: 0.8125rem;
+          }
+        }
+
+        .item__logo {
+          margin-bottom: 8%;
+        }
+
+        .compoCaseArticle__box {
+          border: 0;
+        }
+
+        .compoCaseArticle__header {
+          padding: 0.9375rem 0;
+          border-bottom: 1px solid #ccc;
+
+          .string {
+            font-size: 4.4vw;
+          }
+        }
+
+        .item__props {
+          padding: 0.9375rem 0;
+
+          th,
+          td {
+            font-size: 4vw;
+          }
+        }
+
+        .item__photo {
+          width: auto;
+        }
+      }
+
+      .compoCaseArticle__body {
+        margin-top: 0;
+        padding-top: 1.875rem;
+        border-top: 1px solid #ccc;
+
+        section {
+          margin-bottom: 1.875rem;
+          padding-bottom: 1.875rem;
+        }
+
+        h2 {
+          margin-bottom: 0.9375rem;
+          font-size: 4.4vw;
+          color: #000080;
+        }
+
+        ul,
+        ol,
+        dt,
+        dd,
+        p {
+          font-size: 4vw;
+        }
+
+        .compoCaseArticle__body__main {
+          width: auto;
+        }
+
+        .compoCaseArticle__body__photo {
+          width: auto;
+
+          figure {
+            padding: 1% 5%;
+          }
+        }
+      }
+    }
+  }
+}
