@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+.slick {
+  display: none;
+
+  &::before,
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: 20;
+    background: #000;
+    opacity: 0.5;
+    width: 62.5rem;
+    height: 35rem;
+  }
+
+  &::before {
+    left: -62.5rem;
+  }
+
+  &::after {
+    right: -62.5rem;
+  }
+}
+
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: pan-y;
+
+  * {
+    outline: none;
+  }
+
+  .slick-track,
+  .slick-list {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.dragging {
+    cursor: pointer;
+    cursor: hand;
+  }
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 0.0625rem;
+  display: none;
+
+  img {
+    display: block;
+  }
+
+  &.slick-loading img {
+    display: none;
+  }
+
+  &.dragging img {
+    pointer-events: none;
+  }
+}
+
+[dir='rtl'] .slick-slide {
+  float: right;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+.slick-dots {
+  margin: 0.9375rem 0 3.75rem 0;
+  text-align: center;
+
+  * {
+    outline: none;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 1.25rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    button {
+      padding: 0;
+      width: 0.5rem;
+      height: 0.5rem;
+      background: #a3a5a3;
+      text-indent: -9999px;
+      border-radius: 100px;
+    }
+
+    &.slick-active button {
+      background: #001376;
+    }
+  }
+}
+
+.slick-arrow {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  z-index: 30;
+  background: #fff;
+  margin-top: -2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-indent: -9999px;
+  line-height: 1;
+  font-size: 1rem;
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    position: relative;
+    left: 0.3125rem;
+    top: -0.3125rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #001376;
+    border-right: 0.125rem solid #001376;
+    transform: rotate(45deg);
+  }
+
+  &.slick-next {
+    right: -1.25rem;
+  }
+
+  &.slick-prev {
+    left: -1.25rem;
+
+    &::after {
+      left: 0.625rem;
+      transform: rotate(-135deg);
+    }
+  }
+}
