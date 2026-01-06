@@ -157,7 +157,7 @@ kis2026_base/
 
 #### 3.3.1. Rollup モジュール
 
-本テーマでは `package.json` の `overrides` フィールドで Rollup のバージョンを `^4.54.0` に固定しています。これは、Vite 7.3.0 が使用する Rollup のバージョンと互換性を確保するためです。
+本テーマでは `package.json` の `overrides` フィールドで Rollup のバージョンを `^4.55.1` に固定しています。これは、Vite 7.3.0 が使用する Rollup のバージョンと互換性を確保するためです。
 
 #### 3.3.2. WordPress パッケージ群
 
@@ -312,16 +312,16 @@ SASS が自動的にアンダースコアで始まるファイルを探します
 
 #### 5.4.2. TypeScript 関連パッケージ
 
-* **`@typescript-eslint/eslint-plugin`**: `^8.50.1`
-* **`@typescript-eslint/parser`**: `^8.50.1`
+* **`@typescript-eslint/eslint-plugin`**: `^8.51.0`
+* **`@typescript-eslint/parser`**: `^8.51.0`
 * **`@types/node`**: `^25.0.3`
 * **`@types/jquery`**: `^3.5.33`
 
 #### 5.4.3. その他の開発依存関係
 
-* **`tsx`**: `^4.19.2` - TypeScript 設定ファイルの実行に使用
+* **`tsx`**: `^4.21.0` - TypeScript 設定ファイルの実行に使用
 * **`jiti`**: `^2.6.1` - 設定ファイルの動的読み込み
-* **`globals`**: `^15.14.0` - グローバル変数の定義
+* **`globals`**: `^16.5.0` - グローバル変数の定義
 * **`vite-plugin-static-copy`**: `^3.1.4` - 静的ファイルのコピー
 
 ### 5.5. TypeScript 設定の最適化
@@ -384,6 +384,43 @@ SASS が自動的にアンダースコアで始まるファイルを探します
 * **`no-var`**: `var` の使用を禁止
 * **`object-shorthand`**: オブジェクトの短縮構文を強制
 * **`prefer-template`**: テンプレート・リテラルの使用を強制
+
+### 5.8. フロントエンド実装の完成
+
+#### 5.8.1. TypeScript 化されたフロントエンド・スクリプト
+
+* **`src/scripts/index.ts`**: 既存の JavaScript コードを TypeScript に変換し、フロントエンド用のスクリプトを実装
+  * DOMContentLoaded イベント・ハンドラーの実装
+  * UA 判定機能 (タブレット・モバイル判定)
+  * 電話番号リンクの制御 (PC でのクリック無効化)
+  * viewport の動的設定 (幅広画面での固定幅設定)
+  * PC/モバイル判定機能
+  * チェックボックスの視覚的フィードバック機能
+  * アンカーリンクのスムーズ・スクロール機能
+  * ナビゲーション・メニューの開閉機能 (タッチ・イベント対応)
+  * アコーディオンの開閉機能
+  * PC でのナビゲーション・メニューのホバー機能
+
+#### 5.8.2. SCSS 化されたスタイルシート
+
+* **`src/styles/style.scss`**: 既存の CSS コードを SCSS に変換し、パーシャル・ファイルをインポートするメイン・スタイルシートを実装
+  * `@use` 構文を使用したパーシャル・ファイルのインポート
+  * アンダースコアを含めないインポート形式 (`@use 'base_pc';`)
+  * 各種ページタイプ別のスタイルシート (`_case.scss`, `_corporate.scss`, `_event.scss` など)
+  * メディアクエリー別のスタイルシート (`_base_sp.scss`, `_base_pc_maxWidth_640px.scss` など)
+  * プラグイン上書き用スタイルシート (`_plugins_overwritten.scss`)
+
+#### 5.8.3. 実装の完成状況
+
+以下の実装が完了しています：
+
+* **ビルド設定**: `vite.config.ts` による完全なビルド設定
+* **TypeScript 設定**: `tsconfig.json` による型安全性の確保
+* **ESLint 設定**: `eslint.config.ts` によるコード品質管理
+* **Stylelint 設定**: `.stylelintrc.json` によるスタイルシートの品質管理
+* **フロントエンド・スクリプト**: `src/scripts/index.ts` による TypeScript 化された実装
+* **スタイルシート**: `src/styles/style.scss` による SCSS 化された実装
+* **依存関係**: `package.json` による最新バージョンの依存関係管理
 
 ## 6. Backlog
 
