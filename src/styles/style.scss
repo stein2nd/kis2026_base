@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 @use "default_base";
 @use "base_pc";
 @use "top_pc";
@@ -11,8 +10,7 @@
 @use "inquiry";
 @use "privacy";
 @use "products";
-@use "solution";
-@use "forwarderpro";
+@use "product";
 @use "g-mars";
 @use "ktrade2";
 @use "reason";
@@ -24,7 +22,6 @@
 @use "top_slider_maxWidth_640px";
 @use "default_maxWidth_640px";
 @use "base_pc_minWidth_640px";
-@use "base_sp";
 @use "base_pc_maxWidth_640px";
 @use "base_pc_maxWidth_1100px";
 @use "top_sp";
@@ -35,13 +32,19 @@
 @use "inquiry_maxWidth_640px";
 @use "privacy_maxWidth_640px";
 @use "products_maxWidth_640px";
-@use "solution_maxWidth_640px";
+@use "product_maxWidth_640px";
 @use "reason_maxWidth_640px";
 @use "plugins_overwritten";
 
-/* @use "default_minWidth_640px"; */
-/* @use "default_minWidth_641px"; */
-/* @use "base_pc_minWidth_641px"; */
-/* @use "top_minWidth_640px"; */
-/* @use "case_minWidth_640px"; */
-/* @use "products_minWidth_640px"; */
+/*
+@use "default_minWidth_640px";
+@use "default_minWidth_641px";
+@use "base_pc_minWidth_641px";
+@use "base_sp";
+@use "top_minWidth_640px";
+@use "case_minWidth_640px";
+@use "products_minWidth_640px";
+@use "forwarderpro";
+@use "solution";
+@use "solution_maxWidth_640px";
+*/

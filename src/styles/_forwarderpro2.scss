@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+.forwarderproContent {
+  p,
+  ul {
+    font-size: 1.4rem;
+  }
+
+  .pageBanner {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+
+    .item {
+      width: 100%;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+
+  .compoPageNav {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    li {
+      display: block;
+      width: auto;
+    }
+  }
+
+  .listFunctions {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem 2rem;
+
+    li {
+      display: block;
+      margin-right: 0;
+      margin-top: 0;
+      text-align: left;
+    }
+  }
+}
+
+// 1100px以下の場合、3列表示
+@media screen and (width <= 1100px) {
+  .forwarderproContent {
+    .compoPageNav {
+      ul {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+// 900px以下の場合、2列表示
+@media screen and (width <= 900px) {
+  .forwarderproContent {
+    .compoPageNav {
+      ul {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+// 640px以下の場合、1カラム表示
+@media screen and (width <= 640px) {
+  .forwarderproContent {
+    .listFunctions {
+      grid-template-columns: 1fr;
+      gap: 0.9375rem 0;
+
+      li {
+        margin-top: 0.9375rem;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,16 @@
 @charset "UTF-8";
 
 .pageContent {
-  .mw_wp_form_confirm .recruitForm_lead {
-    display: none;
+  .mw_wp_form_confirm {
+    .recruitForm_lead {
+      display: none;
+    }
+
+    .button {
+      &.button--e {
+        margin-bottom: 1.875rem;
+        margin-right: 0;
+      }
+    }
   }
 }

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.productContent {
+    .pageBanner {
+        background-color: #dfe4ea;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+
+        .item {
+            width: 100%;
+
+            img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+    }
+
+    .productBanner {
+        margin-bottom: 3.125rem;
+    }
+
+    .innerUnit {
+        margin-bottom: 3.75rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .productLead {
+        margin-bottom: 1.5rem;
+    }
+
+    .productNote {
+        margin-top: 1.25rem;
+    }
+
+    .productLinkText {
+        margin-top: 1.25rem;
+        font-size: 1.8rem;
+    }
+}
