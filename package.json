@@ -34,27 +34,27 @@
     "format:check": "prettier --check \"src/**/*.{ts,scss}\""
   },
   "overrides": {
-    "rollup": "^4.55.1"
+    "rollup": "^4.60.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
-    "@types/jquery": "^3.5.33",
-    "@types/node": "^25.0.3",
-    "@typescript-eslint/eslint-plugin": "^8.52.0",
-    "@typescript-eslint/parser": "^8.52.0",
-    "autoprefixer": "^10.4.23",
-    "eslint": "^9.39.2",
-    "globals": "^17.0.0",
+    "@eslint/js": "^10.0.1",
+    "@types/jquery": "^4.0.0",
+    "@types/node": "^25.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.2",
+    "@typescript-eslint/parser": "^8.57.2",
+    "autoprefixer": "^10.4.27",
+    "eslint": "^10.1.0",
+    "globals": "^17.4.0",
     "jiti": "^2.6.1",
-    "postcss": "^8.5.6",
-    "prettier": "^3.7.4",
-    "rollup": "^4.55.1",
-    "sass": "^1.97.2",
-    "stylelint": "^16.26.1",
-    "stylelint-config-standard-scss": "^16.0.0",
+    "postcss": "^8.5.8",
+    "prettier": "^3.8.1",
+    "rollup": "^4.60.0",
+    "sass": "^1.98.0",
+    "stylelint": "^17.5.0",
+    "stylelint-config-standard-scss": "^17.0.0",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.0",
-    "vite-plugin-static-copy": "^3.1.4"
+    "typescript": "^6.0.2",
+    "vite": "^8.0.2",
+    "vite-plugin-static-copy": "^4.0.0"
   }
 }
