@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="286.875" height="56.47" viewBox="0 0 286.875 56.47">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: navy;
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="button_d_bg.svg" class="cls-1" d="M17.066,1867.86v-40.43L32.21,1812.4H302.933v40.42l-15.144,15.04H17.066Z" transform="translate(-16.563 -1811.91)"/>
+</svg>
