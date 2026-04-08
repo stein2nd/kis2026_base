@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+// 1100px以下の場合、3列表示
+@media screen and (width <= 1100px) {
+    .forwarderproContent {
+      .compoPageNav {
+        ul {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+  }
+  
