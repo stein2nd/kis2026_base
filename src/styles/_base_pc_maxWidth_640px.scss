@@ -530,8 +530,6 @@
 
   .compoHistory {
     .compoHistory__header {
-      width: 4.375rem;
-
       .string {
         font-size: 1.8rem;
         font-weight: normal;
@@ -542,11 +540,15 @@
         content: '';
         position: absolute;
         z-index: 5;
+
+        /*
         background-size: 100% auto;
         left: 0;
         top: -0.875rem;
         width: 4.375rem;
         height: 1rem;
+        */
+
       }
     }
 
