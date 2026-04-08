@@ -186,11 +186,11 @@ WordPress コア JS パッケージ (`@wordpress/*`) は外部化されており
 
 * **Autoprefixer による自動生成**: ビルド時に Autoprefixer が、設定されたブラウザ・サポート要件に基づいて、必要なベンダー・プレフィックスを自動生成します。
 * **手動ベンダー・プレフィックスの禁止**: ソースコード内にベンダー・プレフィックス (`-webkit-`, `-moz-`, `-ms-`, `-o-`) を手動で記述することは禁止します。
-* **設定**: `vite.config.ts` の `overrideBrowserslist` で対象ブラウザを指定します（デフォルト: `last 2 versions`, `> 1%`, `not dead`, `not ie 11`）。
+* **設定**: `vite.config.ts` の `overrideBrowserslist` で対象ブラウザを指定します (デフォルト: `last 2 versions`, `> 1%`, `not dead`, `not ie 11`)。
 
 ### 4.2. SCSS パーシャル・ファイルのインポート
 
-SCSS のパーシャル・ファイル（`_` で始まるファイル）をインポートする際は、アンダースコアを含めずにインポートします。
+SCSS のパーシャル・ファイル (`_` で始まるファイル) をインポートする際は、アンダースコアを含めずにインポートします。
 
 * **正しい例**: `@use 'base_pc';`
 * **誤った例**: `@use '_base_pc';`
@@ -240,7 +240,7 @@ SASS が自動的にアンダースコアで始まるファイルを探します
 
 * **Stylelint 設定ファイル**: `stylelint.config.js` → `.stylelintrc.json` に変更
   * JSON 形式にすることで、ESLint の `no-undef` 警告を回避
-  * 注: ESLint 設定ファイルの変更（`eslint.config.mjs` → `eslint.config.ts`）については 5.1節を参照
+  * 注: ESLint 設定ファイルの変更 (`eslint.config.mjs` → `eslint.config.ts`) については 5.1節を参照
 
 #### 5.2.2. Stylelint ルールの調整
 
