@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@media screen and (width <= 640px) {
+  #wrapper .pageContent {
+    .slutionLinkText {
+      font-size: 4.4vw;
+    }
+
+    .solutionLead {
+      font-size: 3.76vw;
+    }
+  }
+}
