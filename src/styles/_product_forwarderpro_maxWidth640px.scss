@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// 640px以下の場合、1カラム表示
+@media screen and (width <= 640px) {
+    .forwarderproContent {
+      .listFunctions {
+        grid-template-columns: 1fr;
+        gap: 0.9375rem 0;
+  
+        li {
+          margin-top: 0.9375rem;
+  
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
