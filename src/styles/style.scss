@@ -11,8 +11,14 @@
 @use "privacy";
 @use "products";
 @use "product";
-@use "g-mars";
-@use "ktrade2";
+@use "product_g-mars";
+@use "product_ktrade2";
+@use "product_forwarderpro";
+@use "product_forwarderpro_maxWidth640px";
+@use "product_forwarderpro_maxWidth900px";
+@use "product_forwarderpro_maxWidth1100px";
+@use "product_solution";
+@use "product_solution_maxWidth_640px";
 @use "reason";
 @use "base_pc_mw_form";
 @use "form_mw_form";
@@ -44,7 +50,4 @@
 @use "top_minWidth_640px";
 @use "case_minWidth_640px";
 @use "products_minWidth_640px";
-@use "forwarderpro";
-@use "solution";
-@use "solution_maxWidth_640px";
 */
