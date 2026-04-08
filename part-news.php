@@ -1,10 +1,18 @@
 <?php
+
+/**
+ * ニュース一覧の記事を表示
+ *
+ * @param string $slug_name カテゴリー名
+ * @return string ニュース一覧の記事
+ */
+
 	$slug_name = basename(get_permalink());
 	$args = array(
-		'posts_per_page' => 2,
+		'posts_per_page' => 5,
 		'post_type' => array( 'post' ),
 		'category_name' => $slug_name,
-		);
+	);
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
 ?>
