@@ -29,6 +29,16 @@ add_action('init', 'kis2026_register_shortcodes');
 // 管理画面用のフックを登録
 add_action('init', 'kis2026_register_admin_hooks');
 
+// 2026-04-09 add start
+// フロント用 CSS/JS を読み込み
+add_action('wp_enqueue_scripts', 'kis2026_enqueue_assets');
+
+// head 内の meta/OGP/計測タグを出力
+add_action('wp_head', 'kis2026_output_head_tags', 5);
+
+// body 開始直後にタグを出力（GTM noscript 等）
+add_action('wp_body_open', 'kis2026_output_body_open_tags', 5);
+// 2026-04-09 add end
 
 /**
  * 【action フック「after_setup_theme」】
@@ -40,6 +50,232 @@ function kis2026_theme_setup() {
     // サムネイルを有効
     add_theme_support('post-thumbnails');
 }
+
+// 2026-04-09 add start
+/**
+ * 現在のサイトのスキーム+ホストを返す
+ *
+ * @return string
+ */
+function kis2026_get_site_origin() {
+    $home = home_url('/');
+    $parts = wp_parse_url($home);
+    if (empty($parts['scheme']) || empty($parts['host'])) {
+        return untrailingslashit($home);
+    }
+    $origin = $parts['scheme'] . '://' . $parts['host'];
+    if (!empty($parts['port'])) {
+        $origin .= ':' . $parts['port'];
+    }
+    return $origin;
+}
+
+/**
+ * 【action フック「wp_enqueue_scripts」】
+ * フロントエンドのアセット読み込み
+ *
+ * @return void
+ */
+function kis2026_enqueue_assets() {
+    $theme_uri = get_template_directory_uri();
+
+    // Styles
+    wp_enqueue_style(
+        'kis2026-google-font-oswald',
+        'https://fonts.googleapis.com/css?family=Oswald',
+        array(),
+        null
+    );
+    wp_enqueue_style(
+        'kis2026-style',
+        $theme_uri . '/style.css',
+        array(),
+        null
+    );
+
+    // Scripts (現状の挙動に合わせて head 読み込み)
+    wp_enqueue_script(
+        'kis2026-jquery-local',
+        $theme_uri . '/dist/js/jquery.min.js',
+        array(),
+        null,
+        false
+    );
+    wp_enqueue_script(
+        'kis2026-flexibility',
+        $theme_uri . '/dist/js/flexibility.js',
+        array('kis2026-jquery-local'),
+        null,
+        false
+    );
+    wp_enqueue_script(
+        'kis2026-index',
+        $theme_uri . '/dist/js/index.js',
+        array('kis2026-jquery-local'),
+        null,
+        false
+    );
+}
+
+/**
+ * 【action フック「wp_head」】
+ * head 内タグ出力（meta/OGP/計測）
+ *
+ * @return void
+ */
+function kis2026_output_head_tags() {
+    $origin = kis2026_get_site_origin();
+    $og_image = $origin . '/wp-content/uploads/2018/01/ogimg.png';
+    $site_name = '関西総合システムWEBサイト';
+
+    // アイコン類 (header.php から移設)
+?>
+    <link rel="apple-touch-icon-precomposed" href="<?php echo esc_url(home_url('/apple-touch-icon.png')); ?>">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="<?php echo esc_url(home_url('/favicon.ico')); ?>">
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="aKdhkOJLvnuHg6K68SxeIcMJDQL71nhoMXeSErU7_nc">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NXLPX6D2');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-30327234-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-30327234-1');
+    </script>
+<?php
+    // ここから下は条件付き meta/OGP (header.php から移設)
+    if (is_post_type_archive('event')) {
+        $desc = '港湾物流業務や海貨業務向けのパッケージソフト『Forwarder-PRO』や、輸出入の貿易業務向けのパッケージソフト『K-TRADE2』を説明します。奮ってご参加いただければ幸いです。最善のシステムをご提案します。';
+        $keywords = '港湾,海貨,フォワーダー,保税倉庫,国際,物流,貿易,輸出,輸入,複合一貫,輸送,NVOCC,ロジスティック,AEO,三国間,グローバル,SCM,設備,工事,原価,ガス,機械,工具,金物,商社,卸,販売,ソフト,システム,ソリューション,パッケージ,ERP,開発,コンプライアンス,内部統制,経営課題,イベント情報,説明会,セミナー';
+        $canonical = get_post_type_archive_link('event');
+        $title = 'イベント | 関西総合システム';
+        $url = $canonical ?: ($origin . '/event/');
+
+        echo '<meta name="description" content="' . esc_attr($desc) . '"/>' . "\n";
+        echo '<meta name="keywords" content="' . esc_attr($keywords) . '"/>' . "\n";
+        if (!empty($canonical)) {
+            echo '<link rel="canonical" href="' . esc_url($canonical) . '"/>' . "\n";
+        }
+        echo '<meta property="og:title" content="' . esc_attr($title) . '"/>' . "\n";
+        echo '<meta property="og:type" content="activity"/>' . "\n";
+        echo '<meta property="og:url" content="' . esc_url($url) . '"/>' . "\n";
+        echo '<meta property="og:image" content="' . esc_url($og_image) . '"/>' . "\n";
+        echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '"/>' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr($desc) . '"/>' . "\n";
+        echo '<meta name="twitter:card" content="summary"/>' . "\n";
+        echo '<meta name="twitter:title" content="' . esc_attr($title) . '"/>' . "\n";
+        echo '<meta name="twitter:description" content="' . esc_attr($desc) . '"/>' . "\n";
+        echo '<meta name="twitter:image" content="' . esc_url($og_image) . '"/>' . "\n";
+        echo '<meta itemprop="image" content="' . esc_url($og_image) . '"/>' . "\n";
+    } elseif (is_singular('event')) {
+        $title = single_post_title('', false);
+        $keywords = '港湾,海貨,フォワーダー,保税倉庫,国際,物流,貿易,輸出,輸入,複合一貫,輸送,NVOCC,ロジスティック,AEO,三国間,グローバル,SCM,設備,工事,原価,ガス,機械,工具,金物,商社,卸,販売,ソフト,システム,ソリューション,パッケージ,ERP,開発,コンプライアンス,内部統制,経営課題,イベント情報,説明会,セミナー';
+        $canonical = get_permalink();
+
+        echo '<meta name="description" content="' . esc_attr($title) . '"/>' . "\n";
+        echo '<meta name="keywords" content="' . esc_attr($keywords) . '"/>' . "\n";
+        echo '<link rel="canonical" href="' . esc_url($canonical) . '"/>' . "\n";
+        echo '<meta property="og:title" content="' . esc_attr($title . ' | イベント | 関西総合システム') . '"/>' . "\n";
+        echo '<meta property="og:type" content="activity"/>' . "\n";
+        echo '<meta property="og:url" content="' . esc_url($canonical) . '"/>' . "\n";
+        echo '<meta property="og:image" content="' . esc_url($og_image) . '"/>' . "\n";
+        echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '"/>' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr($title) . '"/>' . "\n";
+        echo '<meta name="twitter:card" content="summary"/>' . "\n";
+        echo '<meta name="twitter:title" content="' . esc_attr($title . ' | イベント | 関西総合システム') . '"/>' . "\n";
+        echo '<meta name="twitter:description" content="' . esc_attr($title) . '"/>' . "\n";
+        echo '<meta name="twitter:image" content="' . esc_url($og_image) . '"/>' . "\n";
+        echo '<meta itemprop="image" content="' . esc_url($og_image) . '"/>' . "\n";
+    }
+
+    if (is_post_type_archive('case')) {
+        $desc = '港湾物流業務や海貨業務、輸出入の貿易業務を中心にシステム開発や導入の事例を紹介しています。当社のソリューションを飛躍させるために実施した海外視察のレポートも掲載しています。是非ご覧ください。';
+        $keywords = '港湾,海貨,フォワーダー,保税倉庫,国際,物流,貿易,輸出,輸入,複合一貫,輸送,NVOCC,ロジスティック,AEO,三国間,グローバル,SCM,設備,工事,原価,ガス,機械,工具,金物,商社,卸,販売,ソフト,システム,ソリューション,パッケージ,ERP,開発,コンプライアンス,内部統制,経営課題,導入事例';
+        $canonical = get_post_type_archive_link('case');
+        $title = '導入事例 | 関西総合システム';
+        $url = $canonical ?: ($origin . '/case/');
+
+        echo '<meta name="description" content="' . esc_attr($desc) . '"/>' . "\n";
+        echo '<meta name="keywords" content="' . esc_attr($keywords) . '"/>' . "\n";
+        if (!empty($canonical)) {
+            echo '<link rel="canonical" href="' . esc_url($canonical) . '"/>' . "\n";
+        }
+        echo '<meta property="og:title" content="' . esc_attr($title) . '"/>' . "\n";
+        echo '<meta property="og:type" content="activity"/>' . "\n";
+        echo '<meta property="og:url" content="' . esc_url($url) . '"/>' . "\n";
+        echo '<meta property="og:image" content="' . esc_url($og_image) . '"/>' . "\n";
+        echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '"/>' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr($desc) . '"/>' . "\n";
+        echo '<meta name="twitter:card" content="summary"/>' . "\n";
+        echo '<meta name="twitter:title" content="' . esc_attr($title) . '"/>' . "\n";
+        echo '<meta name="twitter:description" content="' . esc_attr($desc) . '"/>' . "\n";
+        echo '<meta name="twitter:image" content="' . esc_url($og_image) . '"/>' . "\n";
+        echo '<meta itemprop="image" content="' . esc_url($og_image) . '"/>' . "\n";
+    } elseif (is_singular('case')) {
+        $title = single_post_title('', false);
+        $desc = $title . '様の導入事例をご紹介しています。';
+        $keywords = '港湾,海貨,フォワーダー,保税倉庫,国際,物流,貿易,輸出,輸入,複合一貫,輸送,NVOCC,ロジスティック,AEO,三国間,グローバル,SCM,設備,工事,原価,ガス,機械,工具,金物,商社,卸,販売,ソフト,システム,ソリューション,パッケージ,ERP,開発,コンプライアンス,内部統制,経営課題,導入事例';
+        $canonical = get_permalink();
+
+        echo '<meta name="description" content="' . esc_attr($desc) . '"/>' . "\n";
+        echo '<meta name="keywords" content="' . esc_attr($keywords) . '"/>' . "\n";
+        echo '<link rel="canonical" href="' . esc_url($canonical) . '"/>' . "\n";
+        echo '<meta property="og:title" content="' . esc_attr($title . ' | 導入事例 | 関西総合システム') . '"/>' . "\n";
+        echo '<meta property="og:type" content="activity"/>' . "\n";
+        echo '<meta property="og:url" content="' . esc_url($canonical) . '"/>' . "\n";
+        echo '<meta property="og:image" content="' . esc_url($og_image) . '"/>' . "\n";
+        echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '"/>' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr($desc) . '"/>' . "\n";
+        echo '<meta name="twitter:card" content="summary"/>' . "\n";
+        echo '<meta name="twitter:title" content="' . esc_attr($title . ' | 導入事例 | 関西総合システム') . '"/>' . "\n";
+        echo '<meta name="twitter:description" content="' . esc_attr($desc) . '"/>' . "\n";
+        echo '<meta name="twitter:image" content="' . esc_url($og_image) . '"/>' . "\n";
+        echo '<meta itemprop="image" content="' . esc_url($og_image) . '"/>' . "\n";
+    }
+
+    if (is_singular('post')) {
+        $title = single_post_title('', false);
+        $keywords = '港湾,海貨,フォワーダー,保税倉庫,国際,物流,貿易,輸出,輸入,複合一貫,輸送,NVOCC,ロジスティック,AEO,三国間,グローバル,SCM,設備,工事,原価,ガス,機械,工具,金物,商社,卸,販売,ソフト,システム,ソリューション,パッケージ,ERP,開発,コンプライアンス,内部統制,経営課題';
+        $canonical = get_permalink();
+
+        echo '<meta name="description" content="' . esc_attr($title) . '"/>' . "\n";
+        echo '<meta name="keywords" content="' . esc_attr($keywords) . '"/>' . "\n";
+        echo '<link rel="canonical" href="' . esc_url($canonical) . '"/>' . "\n";
+        echo '<meta property="og:title" content="' . esc_attr($title . ' | ニュース | 関西総合システム') . '"/>' . "\n";
+        echo '<meta property="og:type" content="activity"/>' . "\n";
+        echo '<meta property="og:url" content="' . esc_url($canonical) . '"/>' . "\n";
+        echo '<meta property="og:image" content="' . esc_url($og_image) . '"/>' . "\n";
+        echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '"/>' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr($title) . '"/>' . "\n";
+        echo '<meta name="twitter:card" content="summary"/>' . "\n";
+        echo '<meta name="twitter:title" content="' . esc_attr($title . ' | ニュース | 関西総合システム') . '"/>' . "\n";
+        echo '<meta name="twitter:description" content="' . esc_attr($title) . '"/>' . "\n";
+        echo '<meta name="twitter:image" content="' . esc_url($og_image) . '"/>' . "\n";
+        echo '<meta itemprop="image" content="' . esc_url($og_image) . '"/>' . "\n";
+    }
+}
+
+/**
+ * 【action フック「wp_body_open」】
+ * body 開始直後に必要なタグを出力
+ *
+ * @return void
+ */
+function kis2026_output_body_open_tags() {
+    ?>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXLPX6D2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<?php
+}
+// 2026-04-09 add end
 
 /**
  * 【action フック「init」】
@@ -423,12 +659,12 @@ function wp_paging_nav($query) {
  * @return void
  */
 function breadcrumb($post) {
-    $html = '<div class="breadcrumb__items"><span class="item"><a href="'.esc_url( home_url( '/' )).'">TOP</a></span>　&gt;　';
+    $html = '<div class="breadcrumb__items"><span class="item"><a href="'.esc_url( home_url( '/' )).'">TOP</a></span> &gt; ';
     if (is_page() && $post->post_parent) {
         $parent_id = $post->post_parent;
         $parent_title = get_post($parent_id)->post_title;
         $parent_url =  get_page_link($post->post_parent);
-        $html .= '<span class="item"><a href="'.$parent_url.'">'.$parent_title.'</a></span>　&gt;　';
+        $html .= '<span class="item"><a href="'.$parent_url.'">'.$parent_title.'</a></span> &gt; ';
     }
     $html .= '<span class="item"><span>'.get_the_title().'</span></span></div>';
     echo $html;
