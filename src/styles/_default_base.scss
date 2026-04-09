@@ -213,6 +213,43 @@ a {
   }
 }
 
+.mwform-checkbox-field {
+  label {
+    input[type="checkbox"] {
+      appearance: none;
+      display: inline-block;
+      position: relative;
+      background: #fff;
+      width: 1.25rem;
+      height: 1.25rem;
+      border: 1px solid #a7a7a7;
+      vertical-align: middle;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+        display: inline-block;
+        background: url("../images/icon/icon-checked.svg");
+        background-size: 100% auto;
+        width: 1.25rem;
+        height: 1.25rem;
+        opacity: 0;
+      }
+
+      &:checked {
+        border-color: #1c4ea0;
+      }
+
+      &:checked::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
 .wrapInput {
   display: inline-block;
   position: relative;
@@ -246,6 +283,7 @@ a {
     width: 1.25rem;
     height: 1.25rem;
     border: 1px solid #a7a7a7;
+    display: none;
 
     &.wrapInput--checked {
       border-color: #1c4ea0;
