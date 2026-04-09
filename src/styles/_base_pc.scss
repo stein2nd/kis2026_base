@@ -1800,13 +1800,15 @@
 
     th {
       padding-right: 0.625rem;
-      width: 11.25rem;
+      width: 18rem;
       text-align: right;
+      vertical-align: top;
     }
 
     .iconCell {
       padding-left: 0;
-      width: 3.125rem;
+      width: 5rem;
+      vertical-align: top;
     }
 
     .error {
@@ -1934,29 +1936,31 @@
   p {
     display: none;
   }
+}
 
-  .wrapSubmit__button {
-    position: relative;
-    display: inline-block;
-    width: 25rem;
+.wrapSubmit__button {
+  position: relative;
+  display: block;
+  width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
 
-    input[type='submit'] {
-      width: 100%;
-    }
+  input[type='submit'] {
+    width: 100%;
+  }
 
-    &::after {
-      display: block;
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 1.25rem;
-      margin-top: -0.25rem;
-      width: 0.375rem;
-      height: 0.375rem;
-      border-top: 2px solid #fff;
-      border-right: 2px solid #fff;
-      transform: rotate(45deg);
-    }
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    margin-top: -0.25rem;
+    width: 0.375rem;
+    height: 0.375rem;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
   }
 }
 
