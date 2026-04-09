@@ -612,10 +612,8 @@
     }
   }
 
-  .wrapSubmit {
-    .wrapSubmit__button {
-      width: 80%;
-    }
+  .wrapSubmit__button {
+    width: 80%;
   }
 
   .wrapBackButton {
@@ -925,7 +923,7 @@
       padding-bottom: 0;
       width: auto;
       vertical-align: top;
-      top: 0.125rem;
+      top: 1.4rem;
     }
 
     .error {
