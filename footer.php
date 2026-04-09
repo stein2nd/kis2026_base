@@ -88,16 +88,16 @@
                             <span class="icon icon--arrow"></span>情報ｾｷｭﾘﾃｨ基本方針
                         </a>
                     </li>
-                    <!--
-                    <li class="spEven">
-                        <script type="text/javascript" src="//seal.securecore.co.jp/js/ss_130-50.js"></script><noscript><img src="//seal.securecore.co.jp/image/noscript_130x50.png"></noscript>
-                    </li>
-                    -->
+<?php 
+                    // <li class="spEven">
+                    //     <script type="text/javascript" src="//seal.securecore.co.jp/js/ss_130-50.js"></script><noscript><img src="//seal.securecore.co.jp/image/noscript_130x50.png"></noscript>
+                    // </li>
+?>
                 </ul>
             </div>
             <div class="flex__item item pc">
                 <div class="logoSmall">
-                    <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/logo_w.svg" alt="関西総合システム株式会社">
+                    <img src="<?php echo content_url('/uploads/2017/12/logo_w.png'); ?>" alt="関西総合システム株式会社">
                 </div>
                 <div>
                     <a href="<?php echo esc_url(home_url('/')); ?>inquiry/" class="button button--c">資料請求・お問い合わせ</a>
