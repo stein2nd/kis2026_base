@@ -58,6 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
    * checkbox のラベルをクリックしたときに、checkbox をチェックする
    */
   document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+    // MW WP Form はプラグイン側の HTML をそのまま活かして、
+    // テーマ JS による擬似 UI (wrapInput) を差し込まない
+    if (checkbox.closest('.mwform-checkbox-field')) {
+      return;
+    }
     if ((checkbox as HTMLInputElement).checked) {
       checkbox.insertAdjacentHTML(
         'beforebegin',
@@ -75,6 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
    * checkbox のラベルをクリックしたときに、checkbox をチェックする
    */
   document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+    if (checkbox.closest('.mwform-checkbox-field')) {
+      return;
+    }
     checkbox.addEventListener('change', function (this: HTMLInputElement) {
       if (this.getAttribute('type') === 'radio') {
         const groupName = this.getAttribute('name');
