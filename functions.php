@@ -87,23 +87,29 @@ function kis2026_enqueue_assets() {
         null
     );
     wp_enqueue_style(
+        'kis2026-slick',
+        $theme_uri . '/dist/css/src/thirdparties/styles/slick.css',
+        array(),
+        null
+    );
+    wp_enqueue_style(
         'kis2026-style',
         $theme_uri . '/style.css',
-        array(),
+        array('kis2026-slick'),
         null
     );
 
     // Scripts (現状の挙動に合わせて head 読み込み)
     wp_enqueue_script(
         'kis2026-jquery-local',
-        $theme_uri . '/dist/js/jquery.min.js',
+        $theme_uri . '/dist/js/src/thirdparties/scripts/jquery.min.js',
         array(),
         null,
         false
     );
     wp_enqueue_script(
         'kis2026-flexibility',
-        $theme_uri . '/dist/js/flexibility.js',
+        $theme_uri . '/dist/js/src/thirdparties/scripts/flexibility.js',
         array('kis2026-jquery-local'),
         null,
         false
