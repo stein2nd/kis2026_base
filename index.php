@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <script src="<?php echo get_template_directory_uri(); ?>/dist/js/slick.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/dist/js/src/thirdparties/scripts/slick.min.js"></script>
     <script>
         jQuery(function ($) {
             $slick = $('.slick').slick({
