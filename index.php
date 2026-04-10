@@ -57,7 +57,7 @@
                 <small>PRODUCTS</small>
             </header>
             <ul class="flex flex--col3">
-                <li class="flex__item compoCard compoCard--full">
+                <li class="flex__item compoCard compoCard--full setBgWhite">
                     <a href="<?php echo esc_url(home_url('/')); ?>products/forwarderpro/" class="resetHover">
                         <div class="compoCard__thumb">
                             <img src="../../wp-content/uploads/2018/03/home_img_01.jpg" alt="">
@@ -73,7 +73,7 @@
                         </dl>
                     </a>
                 </li>
-                <li class="flex__item compoCard compoCard--full">
+                <li class="flex__item compoCard compoCard--full setBgWhite">
                     <a href="<?php echo esc_url(home_url('/')); ?>products/solution/" class="resetHover">
                         <div class="compoCard__thumb">
                             <img src="../../wp-content/uploads/2017/12/home_img_07.jpg" alt="各種ソリューション">
@@ -166,7 +166,6 @@
             </section>
         </div>
     </div>
-
 
     <div class="compoFooterBanner">
         <div class="fixedWidth">
