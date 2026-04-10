@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="pageContent spPad">
 	<div class="fixedWidth breadcrumb">
-		<span class="item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a></span>　&gt;　<span class="item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>event/">イベント</a>　&gt;　<span class="item"><span><?php the_title(); ?></span></span>
+		<span class="item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a></span> &gt; <span class="item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>event/">イベント</a> &gt; <span class="item"><span><?php the_title(); ?></span></span>
 	</div>
 	<div class="fixedWidth">
 		<div class="pageTitle">
