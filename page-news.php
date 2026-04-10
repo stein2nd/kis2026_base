@@ -8,7 +8,7 @@
 ?>
 <div class="pageContent spPad">
 	<div class="fixedWidth breadcrumb">
-		<span class="item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a></span>　&gt;　<span class="item"><span>ニュース</span></span>
+		<span class="item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a></span> &gt; <span class="item"><span>ニュース</span></span>
 	</div>
 	<main class="fixedWidth">
 		<header class="pageTitle">
@@ -37,7 +37,7 @@
 				}
 			?>
 			<script>
-				$('.breadcrumb span:last-child span').append('　<?php echo $param_y; ?>年')
+				$('.breadcrumb span:last-child span').append(' <?php echo $param_y; ?>年')
 			</script>
 			<header class="headerB">
 				<h2 class="string"><?php echo $param_y; ?>年</h2>
