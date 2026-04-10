@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .siteHeader {
-  padding-bottom: 0.625rem;
+  padding-bottom: 1rem;
 
   .desc {
     margin: 0.9375rem 0 0.625rem 0;
@@ -211,6 +211,8 @@
 }
 
 .siteFooter {
+  margin-top: 1rem;
+
   .siteFooterButton {
     background: #000080;
     color: #fff;
@@ -1993,7 +1995,8 @@
 }
 
 .wrapBackButton {
-  margin-top: 3.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
