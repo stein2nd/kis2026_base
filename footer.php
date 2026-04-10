@@ -4,7 +4,7 @@
         <div class="fixedWidth">
             <section>
                 <header class="siteFooterButton__title">
-                    <h2 class="string">＼国際物流システムのことならKISにおまかせください／</h2>
+                    <h2 class="string">＼国際物流システムのことなら KIS におまかせください／</h2>
                 </header>
                 <ul class="siteFooterButton__content">
                     <li>
