@@ -103,15 +103,24 @@ export default defineConfig({
       targets: [
         {
           src: 'src/thirdparties/scripts/*',
-          dest: 'js',
+          // dist/js/src/thirdparties/scripts/*
+          dest: 'js/src/thirdparties/scripts',
+          // src/thirdparties/scripts/jquery.min.js → dist/js/src/thirdparties/scripts/jquery.min.js
+          rename: { stripBase: 3 },
         },
         {
           src: 'src/thirdparties/styles/*',
-          dest: 'css',
+          // dist/css/src/thirdparties/styles/*
+          dest: 'css/src/thirdparties/styles',
+          // src/thirdparties/styles/slick.css → dist/css/src/thirdparties/styles/slick.css
+          rename: { stripBase: 3 },
         },
         {
           src: 'src/images/**/*.*',
-          dest: 'assets',
+          // dist/assets/src/images/**/*
+          dest: 'assets/src/images',
+          // src/images/icon/foo.svg → dist/assets/src/images/icon/foo.svg
+          rename: { stripBase: 2 },
         },
       ],
     }),
