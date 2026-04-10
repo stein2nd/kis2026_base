@@ -15,7 +15,8 @@
 			while ( have_posts() ) : the_post();
 				get_template_part( 'content', get_post_format() );
 			endwhile;
-				twentyfourteen_paging_nav();
+				// twentyfourteen_paging_nav();
+				wp_paging_nav($wp_query);
 			else :
 				get_template_part( 'content', 'none' );
 			endif;
