@@ -31,18 +31,19 @@
             <?php endif; ?>
             <div class="box--r pc">
                 <a href="<?php echo esc_url(home_url('/')); ?>inquiry/" class="button button--a">お問い合わせ・資料請求<span class="icon icon--arrow"></span></a>
-                <!-- Begin Yahoo Search Form -->
-                <form action="https://search.yahoo.co.jp/search" method="get" target="_blank" class="searchform">
+                <?php
+                // サイト内検索: Google (as_sitesearch でドメイン限定。本番のホスト名が入ります)
+                $kis2026_search_site_host = wp_parse_url( home_url( '/' ), PHP_URL_HOST );
+                ?>
+                <!-- Begin Site search (Google) -->
+                <form action="https://www.google.co.jp/search" method="get" target="_blank" class="searchform">
                     <p style="margin:0;padding:0;">
-                        <input type="text" name="p" size="28" id="s">
-                        <input type="hidden" name="fr" value="yssw">
-                        <input type="hidden" name="ei" value="utf-8">
+                        <input type="text" name="q" id="s" size="28" autocomplete="off" value="">
+                        <input type="hidden" name="as_sitesearch" value="<?php echo esc_attr( $kis2026_search_site_host ); ?>">
                         <input type="submit" value="検索" id="searchsubmit">
-                        <input name="vs" type="hidden" value="<?php echo esc_attr( kis2026_get_site_origin() ); ?>/" checked="checked">
                     </p>
                 </form>
-                <img src="https://custom.search.yahoo.co.jp/images/window/006c75a92ba244c6b4cbe2709aa17d7b.gif" width="1" height="1" style="display:block;position:absolute">
-                <!-- End Yahoo! Search Form -->
+                <!-- End Site search (Google) -->
             </div>
         </div>
         <div class="toggleNav sp"><span></span><span></span><span></span></div>
