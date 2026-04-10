@@ -20,7 +20,7 @@
 			while ( have_posts() ) : the_post();
 				get_template_part( 'content', get_post_format() );
 			endwhile;
-			wp_paging_nav();
+			wp_paging_nav($wp_query);
 		?>
 	</div>
 	<?php get_sidebar(); ?>
