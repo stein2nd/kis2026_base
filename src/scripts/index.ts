@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (checkbox.closest('.mwform-checkbox-field')) {
       return;
     }
+
     if ((checkbox as HTMLInputElement).checked) {
       checkbox.insertAdjacentHTML(
         'beforebegin',
@@ -77,19 +78,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /**
-   * checkbox のラベルをクリックしたときに、checkbox をチェックする
+   * checkbox のラベルをクリックしたときに、ラベルに checked クラスを追加する
    */
   document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+    // MW WP Form はプラグイン側の HTML をそのまま活かして、
+    // テーマ JS による擬似 UI (wrapInput) を差し込まない
     if (checkbox.closest('.mwform-checkbox-field')) {
       return;
     }
+
+    // checkbox の状態が変更されたときに、ラベルに checked クラスを追加する
     checkbox.addEventListener('change', function (this: HTMLInputElement) {
+      // radio の場合は、グループ内の他の radio をチェック解除する
       if (this.getAttribute('type') === 'radio') {
         const groupName = this.getAttribute('name');
         document.querySelectorAll(`input[name="${groupName}"]`).forEach((groupCheckbox) => {
           groupCheckbox.closest('.wrapInput')?.classList.remove('wrapInput--checked');
         });
       }
+
+      // checkbox の場合は、checked の状態に応じて、ラベルに checked クラスを追加する
       if (this.checked) {
         this.closest('li')?.classList.add('checked');
         this.closest('.wrapInput')?.classList.add('wrapInput--checked');
