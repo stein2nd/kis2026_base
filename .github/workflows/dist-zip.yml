@@ -1,0 +1,38 @@
+name: dist-zip
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-dist-zip:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build theme assets
+        run: npm run build
+
+      - name: Make dist zip
+        run: npm run dist:zip:ci
+
+      - name: Upload zip artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-zip
+          path: release/*.zip
+          if-no-files-found: error

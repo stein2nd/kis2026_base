@@ -24,6 +24,8 @@
   "scripts": {
     "build": "FLUSH_DIST=true vite build --mode production",
     "build:dev": "FLUSH_DIST=true vite build --mode development",
+    "dist:zip": "npm run build && node tools/dist/make-dist-zip.mjs",
+    "dist:zip:ci": "node tools/dist/make-dist-zip.mjs",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint src/scripts/**/*.ts",
     "lint:css": "stylelint src/styles/**/*.scss",
@@ -43,6 +45,7 @@
     "@typescript-eslint/eslint-plugin": "^8.57.2",
     "@typescript-eslint/parser": "^8.57.2",
     "autoprefixer": "^10.4.27",
+    "archiver": "^7.0.1",
     "eslint": "^10.1.0",
     "globals": "^17.4.0",
     "jiti": "^2.6.1",
@@ -53,7 +56,7 @@
     "stylelint": "^17.5.0",
     "stylelint-config-standard-scss": "^17.0.0",
     "tsx": "^4.21.0",
-    "typescript": "^6.0.2",
+    "typescript": "^5.9.3",
     "vite": "^8.0.2",
     "vite-plugin-static-copy": "^4.0.0"
   }
