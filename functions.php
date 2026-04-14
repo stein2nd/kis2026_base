@@ -36,7 +36,7 @@ add_action('wp_enqueue_scripts', 'kis2026_enqueue_assets');
 // head 内の meta/OGP/計測タグを出力
 add_action('wp_head', 'kis2026_output_head_tags', 5);
 
-// body 開始直後にタグを出力（GTM noscript 等）
+// body 開始直後にタグを出力 (GTM noscript 等)
 add_action('wp_body_open', 'kis2026_output_body_open_tags', 5);
 // 2026-04-09 add end
 
@@ -398,7 +398,7 @@ function kis2026_register_admin_hooks() {
     add_action('admin_menu', 'edit_admin_menus');
 
     // フロントエンドで管理画面用の CSS を読み込まないようにする
-    //add_action('wp_enqueue_scripts', 'remove_admin_styles_from_frontend', 999);
+    add_action('wp_enqueue_scripts', 'remove_admin_styles_from_frontend', 999);
 }
 
 /**
