@@ -981,9 +981,8 @@
   &.button--g {
     background-image: url("../images/button/button_g_bg.svg");
     background-size: 100% auto;
-    padding: 0;
-    width: 23.75rem;
-    padding-top: 13%;
+    width: 70%;
+    padding: 13% 0 13% 0;
     text-align: center;
     color: #fff;
     font-size: 1.6rem;
@@ -993,7 +992,7 @@
       display: inline-block;
       position: absolute;
       left: 0;
-      top: 50%;
+      top: 2rem;
       width: 100%;
       margin-top: -2.5%;
 
