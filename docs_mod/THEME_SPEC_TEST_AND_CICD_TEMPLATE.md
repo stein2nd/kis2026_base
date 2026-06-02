@@ -1,7 +1,7 @@
-# テーマ向けテスト・CI/CD 記述メモ (`docs_mod`)
+# テーマ向けテスト、CI/CD 記述メモ (`docs_mod`)
 
 [stein2nd/wp-plugin-spec](https://github.com/stein2nd/wp-plugin-spec.git) の `docs/COMMON_SPEC_CICD.md` を WordPress テーマ開発向けに展開・追記する際の **論点メモ** です。  
-確定仕様は組織共通の `COMMON_SPEC_CICD.md` に集約し、本ファイルは **KIS2026 固有や先行ドラフト** の置き場にしてください。
+確定仕様は組織共通の `COMMON_SPEC_CICD.md` に集約し、本ファイルは **KIS2026固有や先行ドラフト** の置き場にしてください。
 
 ---
 
@@ -22,19 +22,19 @@
 ## 3. WordPress 実行環境との結合度
 
 * ユニットテストのみ / WP 環境を立てるか (Docker、wp-env 等)
-* 最低サポート WP バージョンと CI マトリクス
+* 最低サポート WP バージョンと CI マトリックス
 * PHP リンター (PHPCS 等) をテーマに導入するか
 
-## 4. E2E・ビジュアルリグレッション (任意)
+## 4. E2E、ビジュアルリグレッション (任意)
 
-* 対象 URL・テンプレートの優先順位
+* 対象 URL、テンプレートの優先順位
 * ステージングとの同期方法
 * 実行頻度 (PR 毎 / nightly)
 
 ## 5. デプロイ
 
 * SFTP / Git 連携 / マネージドホストのパイプライン
-* `FLUSH_DIST` 等、環境変数依存のドキュメント化
+* `FLUSH_DIST` 等、環境変数への依存をドキュメント化
 
 ---
 
