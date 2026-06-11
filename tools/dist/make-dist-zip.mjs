@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
-import archiver from 'archiver';
+import { ZipArchive } from 'archiver';
 
 const cwd = process.cwd();
 const themeSlug = path.basename(cwd);
@@ -101,7 +101,7 @@ async function makeZip({ version }) {
 
   await new Promise((resolve, reject) => {
     const output = fs.createWriteStream(zipPath);
-    const archive = archiver('zip', { zlib: { level: 9 } });
+    const archive = new ZipArchive({ zlib: { level: 9 } });
 
     output.on('close', resolve);
     output.on('error', reject);

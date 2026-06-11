@@ -2,6 +2,12 @@
 
 ## unreleased
 
+## 1.0.2 - 2026-06-12
+
+### Fixed
+
+* `tools/dist/make-dist-zip.mjs` の `archiver` v8 対応 (`ZipArchive` への移行、`npm run dist:zip`、CI `dist-zip` の失敗を解消)
+
 ## 1.0.1 - 2026-06-12
 
 ### Added
