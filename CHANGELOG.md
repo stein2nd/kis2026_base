@@ -2,6 +2,8 @@
 
 ## unreleased
 
+## 1.0.1 - 2026-06-12
+
 ### Added
 
 * Docs Linter の導入 (`npm run lint:docs`、`.textlintrc.json`、CI ワークフロー `docs-lint.yml`)
