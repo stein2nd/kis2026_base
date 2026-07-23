@@ -2,6 +2,17 @@
 
 ## unreleased
 
+## 1.0.3 - 2026-07-23
+
+### Added
+
+* `.npmrc` の追加 (`legacy-peer-deps`、`@s2j/docs-linter` の GitHub 依存向け `allow-git` 設定)
+
+### Changed
+
+* 開発用 npm モジュールを最新版に更新 (TypeScript 7.0、Vite 8.1 等)
+* README のバッジを更新 (TypeScript 7.0、SCSS 1.101、Vite 8.1)
+
 ## 1.0.2 - 2026-06-12
 
 ### Fixed
