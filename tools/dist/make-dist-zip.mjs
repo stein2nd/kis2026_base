@@ -3,6 +3,10 @@ import fsp from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import { ZipArchive } from 'archiver';
+import {
+  readPackageVersion,
+  syncThemeVersionFromPackage,
+} from '../sync-theme-version.mjs';
 
 const cwd = process.cwd();
 const themeSlug = path.basename(cwd);
@@ -48,16 +52,6 @@ async function listRootPhpFiles() {
     .filter((e) => e.isFile() && e.name.endsWith('.php'))
     .map((e) => e.name)
     .sort();
-}
-
-async function readThemeVersionFromStyleCss() {
-  const stylePath = path.join(cwd, 'style.css');
-  if (!fs.existsSync(stylePath)) return null;
-  const raw = await fsp.readFile(stylePath, 'utf8');
-  // Read only header-ish area; WP reads from the comment header block.
-  const head = raw.split(/\r?\n/).slice(0, 60).join('\n');
-  const m = head.match(/^\s*Version:\s*([^\r\n]+)\s*$/im);
-  return m?.[1]?.trim() || null;
 }
 
 async function stageFiles() {
@@ -119,7 +113,8 @@ async function makeZip({ version }) {
 }
 
 async function main() {
-  const version = (await readThemeVersionFromStyleCss()) || '0.0.0';
+  await syncThemeVersionFromPackage();
+  const version = (await readPackageVersion()) || '0.0.0';
 
   console.log(`[dist-zip] stage: ${normalizePosix(path.relative(cwd, STAGE_DIR))}`);
   await stageFiles();

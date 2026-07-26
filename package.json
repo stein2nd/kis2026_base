@@ -1,6 +1,6 @@
 {
   "name": "kis2026_base",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Block theme base for KIS.",
   "type": "commonjs",
   "author": "Koutarou ISHIKAWA",
@@ -22,6 +22,10 @@
   },
   "main": "build/index.js",
   "scripts": {
+    "version:sync": "node tools/sync-theme-version.mjs",
+    "version:check": "node tools/sync-theme-version.mjs --check",
+    "prebuild": "npm run version:sync",
+    "version": "npm run version:sync",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:ts": "eslint src/**/*.{ts,tsx} --ext .ts,.tsx",
     "lint:ts:fix": "eslint src/**/*.{ts,tsx} --ext .ts,.tsx --fix",

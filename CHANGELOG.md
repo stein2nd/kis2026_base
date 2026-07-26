@@ -2,7 +2,7 @@
 
 ## unreleased
 
-## 1.0.3 - 2026-07-23
+## 1.0.3 - 2026-07-26
 
 ### Added
 
@@ -10,8 +10,9 @@
 
 ### Changed
 
-* 開発用 npm モジュールを最新版に更新 (TypeScript 7.0、Vite 8.1 等)
-* README のバッジを更新 (TypeScript 7.0、SCSS 1.101、Vite 8.1)
+* 開発用 npm モジュールを最新版に更新 (TypeScript v7.0、Vite v8.1等)
+* README のバッジを更新 (TypeScript v7.0、SCSS v1.101、Vite v8.1)
+* `package.json` と `style.css` の Version を同期 (`version:sync`、`prebuild`、配布 zip 生成時)
 
 ## 1.0.2 - 2026-06-12
 
