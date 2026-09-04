@@ -9,7 +9,7 @@
 html,
 body {
   font-size: 0.625rem;
-  font-family: 'Noto Sans Japanese', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   line-height: 1.6;
   font-feature-settings: 'palt' 1;
   text-size-adjust: 100%;
@@ -205,12 +205,25 @@ img {
 }
 
 a {
-  color: #444;
-  text-decoration: none;
+  color: navy;
+  text-decoration: underline;
 
   img {
     transition: opacity 0.5s ease;
   }
+}
+
+/* UI chrome: navigation/buttons keep theme colors, no underline */
+.navMain a,
+.siteHeader a,
+.siteFooter a,
+.button,
+.resetHover,
+.pager a,
+.yearNav a,
+.compoCard a,
+.compoRecentPost a {
+  text-decoration: none;
 }
 
 .mwform-checkbox-field {

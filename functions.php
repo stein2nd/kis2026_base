@@ -81,12 +81,6 @@ function kis2026_enqueue_assets() {
 
     // Styles
     wp_enqueue_style(
-        'kis2026-google-font-oswald',
-        'https://fonts.googleapis.com/css?family=Oswald',
-        array(),
-        null
-    );
-    wp_enqueue_style(
         'kis2026-slick',
         $theme_uri . '/dist/css/src/thirdparties/styles/slick.css',
         array(),

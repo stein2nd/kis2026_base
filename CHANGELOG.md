@@ -1,6 +1,24 @@
-# KIS-2026-Base - CHANGELOG
+# `KIS 2026 Hybrid` - CHANGELOG
 
 ## unreleased
+
+## 1.0.4 - 2026-09-05
+
+### Changed
+
+* テーマ名を `KIS 2026 Hybrid` に変更 (`style.css`)
+* `package.json` Version を1.0.4に更新
+* `theme.json` に FSE 向け設定を追加 (layout、spacing、typography 等)
+* リンクスタイルを `color: navy; text-decoration: underline` に統一 (`:visited` は未指定)
+* 個別クラス (`.setColorLink` 等) のリンク色指定を整理し、グローバルスタイルに統一
+* 本文フォントを `Noto Sans JP` に統一 (`Noto Sans Japanese`、Oswald を廃止)
+* `.en` の Oswald 指定および `functions.php` の Google Fonts 読み込みを削除
+* `style.css` のフォント上書きワークアラウンドを削除
+* ナビ・フッター・ボタン・カード型リンク等は下線なしの例外指定を維持
+
+### Added
+
+* `docs/SPEC.md` に §1.5 依存プラグイン (エコシステム) 索引節を追加 (kis-wordpress 仕様へのリンク)
 
 ## 1.0.3 - 2026-07-26
 

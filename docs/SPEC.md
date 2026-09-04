@@ -42,6 +42,60 @@
 * **カスタム投稿タイプの追加**
   * 作成したブロック・テーマに、複数のカスタム投稿タイプを追加していく予定です。
 
+### 1.5. 依存プラグイン (エコシステム)
+
+本テーマは **見た目、FSE テンプレート** に専念し、コンテンツ構造・フォーム・横断ロジックは **KIS WordPress エコシステム** (プラグイン群) に委譲します。
+
+**プラグイン仕様の正:** [KIS WordPress > docs_mod/specs.md](https://github.com/stein2nd/kis-wordpress/blob/main/docs_mod/specs.md)  
+(確定後は同 repo の `docs/` 配下へ分割移行を予定)
+
+#### 1.5.1. KIS WordPress モノレポ (サイト専用)
+
+| プラグイン | 担当 | 仕様 (予定) | Phase |
+|-----------|------|-------------|-------|
+| **kis-core** | 共通基盤 (CPT 移管、更新日、Template Debug、Query ブロック等) | [KIS WordPress](https://github.com/stein2nd/kis-wordpress) | 0 |
+| **kis-inquiry** | 問い合わせ・資料請求 (Snow Monkey Forms、SaaS 送信) | 同上 | 0〜2 |
+| **kis-case** | 導入事例 | 同上 | 1 |
+| **kis-corporate** | 会社情報 | 同上 | 1 |
+| **kis-recruit** | 採用情報 | 同上 | 1 |
+| **kis-products** | 製品情報 (`product` + `product_section`) | 同上 | 1 |
+| **kis-reason** | KIS が選ばれる理由 | 同上 | 1 |
+| **kis-news** | ニュース・お知らせ (`post` または専用 CPT) | 同上 | 0〜1 |
+
+#### 1.5.2. 別リポジトリ (汎用・サービス)
+
+| 名称 | 種別 | リポジトリ | 備考 |
+|------|------|-----------|------|
+| **S2J Legal** | WP プラグイン | [s2j-legal](https://github.com/stein2nd/s2j-legal) | 個人情報・情報セキュリティ等 (法務) |
+| **post-dates-service** | Composer サービス | [s2j-post-dates-service](https://github.com/stein2nd/s2j-post-dates-service) | 公開日・更新日の表示ロジック |
+| **query-pinned-service** | Composer サービス | [s2j-query-pinned-service](https://github.com/stein2nd/s2j-query-pinned-service) | pin 優先 Query |
+| **inquiry-destination-service** | Composer サービス | [s2j-inquiry-destination-service](https://github.com/stein2nd/s2j-inquiry-destination-service) | 問い合わせ SaaS アダプタ |
+| **s2j-◯◯◯◯** (仮) | WP プラグイン | (未作成) | GatherPress フォーク系イベント (kis-event-manager 後継) |
+
+#### 1.5.3. 既存 S2J プラグイン (連携)
+
+| プラグイン | 本テーマでの用途 |
+|-----------|----------------|
+| [S2J Alliance Manager](https://github.com/stein2nd/s2j-alliance-manager) | トップ / reason のアイコンパレード (ブロック・ショートコード) |
+| [S2J Slug Generater](https://github.com/stein2nd/s2j-slug-generater) | 新 CPT のスラッグ生成 ([S2J Similarity Service](https://github.com/stein2nd/s2j-similarity-service) 利用) |
+
+#### 1.5.4. 移行中・廃止予定
+
+| 名称 | 状態 | 移行先 |
+|------|------|--------|
+| テーマ `functions.php` 内 CPT (`event`, `case`) | テーマ依存 (移管予定) | kis-core |
+| MW WP Form | 保守停止 | kis-inquiry + Snow Monkey Forms |
+| kis-event-manager | 段階的に置換 | s2j-◯◯◯◯ (GatherPress フォーク) |
+| ACF | DB 依存 (段階的に脱却) | ブロック / プラグインメタ |
+
+#### 1.5.5. テーマ側の責務 (参考)
+
+本テーマが担うのは次に限ります。詳細は上記 KIS WordPress 仕様を参照してください。
+
+* `theme.json`、`templates/`、`parts/`、`patterns/`
+* SCSS / ブロックの見た目
+* プラグインブロックを配置する FSE テンプレート
+
 ## 2. プロジェクト構成
 
 ### 2.1. フォルダー構成・ファイル構成

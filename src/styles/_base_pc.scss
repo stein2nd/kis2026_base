@@ -488,10 +488,6 @@
   }
 }
 
-.en {
-  font-family: Oswald, sans-serif;
-}
-
 .icon {
   position: relative;
   display: inline-block;
@@ -1034,6 +1030,12 @@
   &.pageContent--noTitle {
     background: none;
   }
+
+  .compoCard a,
+  .compoArticleItems .item a,
+  .productsContentItem a {
+    text-decoration: none;
+  }
 }
 
 .page-id-82 .pageContent,
@@ -1076,11 +1078,6 @@
 
   .compoArticle__body {
     font-size: 1.6rem;
-
-    a {
-      color: #000080;
-      text-decoration: underline;
-    }
 
     p,
     ul,
@@ -1185,7 +1182,6 @@
       a {
         display: block;
         padding: 0.5rem 0.25rem;
-        color: #000080;
       }
     }
   }
@@ -2007,7 +2003,7 @@
 }
 
 .linkStyle {
-  color: #1c4ea0;
+  color: navy;
   text-decoration: underline;
 }
 
@@ -2178,8 +2174,7 @@
     text-align: left;
   }
 
-  .setColorBlue,
-  .setColorLink {
+  .setColorBlue {
     color: #000080;
   }
 
