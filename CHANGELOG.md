@@ -10,7 +10,7 @@
 
 ### Changed
 
-* `package.json` Version を 1.0.5 に更新
+* `package.json` Version を v1.0.5に更新
 * 開発用 npm モジュールを更新 (Vite v8.3、Dart Sass v1.105、ESLint、TypeScript ESLint、`@s2j/docs-linter` 等)
 * README のバッジを更新 (SCSS v1.105、Vite v8.3)
 
@@ -30,7 +30,7 @@
 
 ### Added
 
-* `docs/SPEC.md` に §1.5 依存プラグイン (エコシステム) 索引節を追加 (kis-wordpress 仕様へのリンク)
+* `docs/SPEC.md` に §1.5依存プラグイン (エコシステム) 索引節を追加 (`kis-wordpress` 仕様へのリンク)
 
 ## 1.0.3 - 2026-07-26
 
