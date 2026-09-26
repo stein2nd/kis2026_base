@@ -2,6 +2,18 @@
 
 ## unreleased
 
+## 1.0.5 - 2026-09-26
+
+### Fixed
+
+* `package-lock.json` の `version` が `package.json` (1.0.4) と不一致だったため同期
+
+### Changed
+
+* `package.json` Version を 1.0.5 に更新
+* 開発用 npm モジュールを更新 (Vite v8.3、Dart Sass v1.105、ESLint、TypeScript ESLint、`@s2j/docs-linter` 等)
+* README のバッジを更新 (SCSS v1.105、Vite v8.3)
+
 ## 1.0.4 - 2026-09-05
 
 ### Changed
