@@ -52,7 +52,7 @@
 #### 1.5.1. KIS WordPress モノレポ (サイト専用)
 
 | プラグイン | 担当 | 仕様 (予定) | Phase |
-|-----------|------|-------------|-------|
+| --- | --- | --- | --- |
 | **kis-core** | 共通基盤 (CPT 移管、更新日、Template Debug、Query ブロック等) | [KIS WordPress](https://github.com/stein2nd/kis-wordpress) | 0 |
 | **kis-inquiry** | 問い合わせ・資料請求 (Snow Monkey Forms、SaaS 送信) | 同上 | 0〜2 |
 | **kis-case** | 導入事例 | 同上 | 1 |
@@ -64,25 +64,27 @@
 
 #### 1.5.2. 別リポジトリ (汎用・サービス)
 
+横断機能の Composer ライブラリは **S2J プロダクトとして別 repo** に切り出しています。仕様の正は [KIS WordPress > docs_mod/specs.md](https://github.com/stein2nd/kis-wordpress/blob/main/docs_mod/specs.md) および各 repo の `docs_mod/service_spec.md` です (本節は索引のみ)。
+
 | 名称 | 種別 | リポジトリ | 備考 |
-|------|------|-----------|------|
+| --- | --- | --- | --- |
 | **S2J Legal** | WP プラグイン | [s2j-legal](https://github.com/stein2nd/s2j-legal) | 個人情報・情報セキュリティ等 (法務) |
-| **post-dates-service** | Composer サービス | [s2j-post-dates-service](https://github.com/stein2nd/s2j-post-dates-service) | 公開日・更新日の表示ロジック |
-| **query-pinned-service** | Composer サービス | [s2j-query-pinned-service](https://github.com/stein2nd/s2j-query-pinned-service) | pin 優先 Query |
-| **inquiry-destination-service** | Composer サービス | [s2j-inquiry-destination-service](https://github.com/stein2nd/s2j-inquiry-destination-service) | 問い合わせ SaaS アダプタ |
+| **S2J Content Dates Service** | Composer サービス | [s2j-content-dates-service](https://github.com/stein2nd/s2j-content-dates-service) | 公開日・更新日の算出 (WP 非依存) |
+| **S2J Query Pinned Service** | Composer サービス | [s2j-query-pinned-service](https://github.com/stein2nd/s2j-query-pinned-service) | ピン優先 + 残り N 件の組立 (WP 非依存) |
+| **S2J Inquiry Destination Service** | Composer サービス | [s2j-inquiry-destination-service](https://github.com/stein2nd/s2j-inquiry-destination-service) | 問い合わせ送信先のコンセント変換 (WP 非依存) |
 | **s2j-◯◯◯◯** (仮) | WP プラグイン | (未作成) | GatherPress フォーク系イベント (kis-event-manager 後継) |
 
 #### 1.5.3. 既存 S2J プラグイン (連携)
 
 | プラグイン | 本テーマでの用途 |
-|-----------|----------------|
+| --- | --- |
 | [S2J Alliance Manager](https://github.com/stein2nd/s2j-alliance-manager) | トップ / reason のアイコンパレード (ブロック・ショートコード) |
 | [S2J Slug Generater](https://github.com/stein2nd/s2j-slug-generater) | 新 CPT のスラッグ生成 ([S2J Similarity Service](https://github.com/stein2nd/s2j-similarity-service) 利用) |
 
 #### 1.5.4. 移行中・廃止予定
 
 | 名称 | 状態 | 移行先 |
-|------|------|--------|
+| --- | --- | --- |
 | テーマ `functions.php` 内 CPT (`event`, `case`) | テーマ依存 (移管予定) | kis-core |
 | MW WP Form | 保守停止 | kis-inquiry + Snow Monkey Forms |
 | kis-event-manager | 段階的に置換 | s2j-◯◯◯◯ (GatherPress フォーク) |

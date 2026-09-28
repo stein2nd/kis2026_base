@@ -2,7 +2,7 @@
 
 ## unreleased
 
-## 1.0.5 - 2026-09-26
+## 1.0.5 - 2026-09-29
 
 ### Fixed
 
@@ -13,6 +13,8 @@
 * `package.json` Version を v1.0.5に更新
 * 開発用 npm モジュールを更新 (Vite v8.3、Dart Sass v1.105、ESLint、TypeScript ESLint、`@s2j/docs-linter` 等)
 * README のバッジを更新 (SCSS v1.105、Vite v8.3)
+* `docs/spec.md` §1.5.2を更新 (`S2J Content Dates Service` 等、横断 S2J プロダクトの索引を `kis-wordpress` に合わせる)
+* `package.json` に `allowScripts` (`@s2j/docs-linter`) を追加
 
 ## 1.0.4 - 2026-09-05
 
