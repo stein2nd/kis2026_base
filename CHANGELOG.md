@@ -2,12 +2,18 @@
 
 ## unreleased
 
+## 1.0.6 - 2026-10-01
+
+### Added
+
+* `docs_mod/wordpress_maintenance_spec.md` を追加 (クラシックテーマ `kix` からブロックテーマに移したとき、保守のどこが楽になり、何が残るかを営業スタッフ向けに説明)
+
 ## 1.0.6 - 2026-09-29
 
 ### Changed
 
 * `package.json` Version を v1.0.6に更新
-* `style.css` と `package-lock.json` の version を 1.0.6 に同期
+* `style.css` と `package-lock.json` の version を1.0.6に同期
 * `docs/spec.md` §1.5.2を更新 (`S2J Legal` を `S2J Site Policy Manager` に改称。リポジトリは `s2j-site-policy-manager`、備考はポリシー台帳)
 
 ## 1.0.5 - 2026-09-29
