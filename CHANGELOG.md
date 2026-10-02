@@ -2,6 +2,14 @@
 
 ## unreleased
 
+## 1.0.6 - 2026-10-03
+
+### Changed
+
+* 開発用 npm モジュールを更新 (Vite v8.3.2、Dart Sass v1.105.1、ESLint v10.12、`@s2j/docs-linter` v1.0.26等)
+* `.vscode/settings.json` の `npm.enableScriptExplorer` を `json.schemaDownload.enable` に変更
+* `docs/spec.md` §1.5.2を更新 (S2J Media Library Date Corrector、S2J Video Publisher、S2J Video Publisher Service を索引に追加)
+
 ## 1.0.6 - 2026-10-02
 
 ### Changed
