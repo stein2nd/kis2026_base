@@ -2,6 +2,12 @@
 
 ## unreleased
 
+## 1.0.6 - 2026-10-02
+
+### Changed
+
+* `docs_mod/wordpress_maintenance_spec.md` に節を追加 (情報源、バックアップとローカル試作、メディアの登録とファイル、ユーザー権限と公開前チェック)
+
 ## 1.0.6 - 2026-10-01
 
 ### Added
