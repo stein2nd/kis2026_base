@@ -6,6 +6,8 @@
 
 ### Changed
 
+* `docs/spec.md` §1.5.2と§1.5.4を更新 (仮称 `s2j-◯◯◯◯` を S2J Webinar と S2J Webinar Service に置き換え。kis-event-manager の移行先を GatherPress フォーク + S2J Webinar に変更)
+
 * 開発用 npm モジュールを更新 (Vite v8.3.2、Dart Sass v1.105.1、ESLint v10.12、`@s2j/docs-linter` v1.0.26等)
 * `.vscode/settings.json` の `npm.enableScriptExplorer` を `json.schemaDownload.enable` に変更
 * `docs/spec.md` §1.5.2を更新 (S2J Media Library Date Corrector、S2J Video Publisher、S2J Video Publisher Service を索引に追加)

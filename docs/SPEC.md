@@ -74,8 +74,9 @@
 | **S2J Content Dates Service** | Composer サービス | [s2j-content-dates-service](https://github.com/stein2nd/s2j-content-dates-service) | 公開日・更新日の算出 (WP 非依存) |
 | **S2J Query Pinned Service** | Composer サービス | [s2j-query-pinned-service](https://github.com/stein2nd/s2j-query-pinned-service) | ピン優先 + 残り N 件の組立 (WP 非依存) |
 | **S2J Inquiry Destination Service** | Composer サービス | [s2j-inquiry-destination-service](https://github.com/stein2nd/s2j-inquiry-destination-service) | 問い合わせ送信先のコンセント変換 (WP 非依存) |
-| **S2J Video Publisher Service** | Composer サービス | [s2j-video-publisher-service](https://github.com/stein2nd/s2j-video-publisher-service) | YouTube に動画をアップロードする際、限定公開の公開期間を設定する。 (WP 非依存) |
-| **s2j-◯◯◯◯** (仮) | WP プラグイン | (未作成) | GatherPress フォーク系イベント (kis-event-manager 後継) |
+| **S2J Video Publisher Service** | Composer サービス | [s2j-video-publisher-service](https://github.com/stein2nd/s2j-video-publisher-service) | YouTube に動画をアップロードする際、限定公開の公開期間を設定する。(WP 非依存) |
+| **S2J Webinar** | WP プラグイン | [s2j-webinar](https://github.com/stein2nd/s2j-webinar) | GatherPress のコンパニオン。イベント UI は [GatherPress フォーク](https://github.com/stein2nd/gatherpress)。kis-event-manager 後継の呼び出し側。仕様は [specs.md](https://github.com/stein2nd/s2j-webinar/blob/main/docs_mod/specs.md) |
+| **S2J Webinar Service** | Composer サービス | [s2j-webinar-service](https://github.com/stein2nd/s2j-webinar-service) | Zoom Webinar の作成・更新のリクエスト組立 (WP 非依存)。仕様は [service_spec.md](https://github.com/stein2nd/s2j-webinar-service/blob/main/docs_mod/service_spec.md) |
 
 #### 1.5.3. 既存 S2J プラグイン (連携)
 
@@ -90,7 +91,7 @@
 | --- | --- | --- |
 | テーマ `functions.php` 内 CPT (`event`, `case`) | テーマ依存 (移管予定) | kis-core |
 | MW WP Form | 保守停止 | kis-inquiry + Snow Monkey Forms |
-| kis-event-manager | 段階的に置換 | s2j-◯◯◯◯ (GatherPress フォーク) |
+| kis-event-manager | 段階的に置換 | GatherPress フォーク + S2J Webinar |
 | ACF | DB 依存 (段階的に脱却) | ブロック / プラグインメタ |
 
 #### 1.5.5. テーマ側の責務 (参考)
