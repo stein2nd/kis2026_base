@@ -2,6 +2,13 @@
 
 ## unreleased
 
+## 1.0.6 - 2026-10-04
+
+### Changed
+
+* `@s2j/docs-linter` を v1.0.27に更新
+* `docs/spec.md` §1.5.2を更新 (呼び出し側の S2J Content Dates、S2J Query Pinned、S2J Inquiry Destination を追加。備考を各 repo の仕様へリンク)
+
 ## 1.0.6 - 2026-10-03
 
 ### Changed

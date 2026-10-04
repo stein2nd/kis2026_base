@@ -70,11 +70,14 @@
 | --- | --- | --- | --- |
 | **S2J Site Policy Manager** | WP プラグイン | [s2j-site-policy-manager](https://github.com/stein2nd/s2j-site-policy-manager) | ポリシー台帳。KIS は個人情報の保護方針と情報セキュリティ基本方針。旧称 S2J Legal |
 | **S2J Media Library Date Corrector** | WP プラグイン | [s2j-media-library-date-corrector](https://github.com/stein2nd/s2j-media-library-date-corrector) | メディアライブラリの年月フィルターを、ファイル配置 (`uploads/yyyy/mm`) とそろえる。一括登録で `post_date` が登録日時になるため、`_wp_attached_file` の年月を `post_date` に写す。 |
-| **S2J Video Publisher** | WP プラグイン | [s2j-video-publisher](https://github.com/stein2nd/s2j-video-publisher) | S2J Video Publisher Service を呼び出す (今後、仕様開発)。 |
-| **S2J Content Dates Service** | Composer サービス | [s2j-content-dates-service](https://github.com/stein2nd/s2j-content-dates-service) | 公開日・更新日の算出 (WP 非依存) |
-| **S2J Query Pinned Service** | Composer サービス | [s2j-query-pinned-service](https://github.com/stein2nd/s2j-query-pinned-service) | ピン優先 + 残り N 件の組立 (WP 非依存) |
-| **S2J Inquiry Destination Service** | Composer サービス | [s2j-inquiry-destination-service](https://github.com/stein2nd/s2j-inquiry-destination-service) | 問い合わせ送信先のコンセント変換 (WP 非依存) |
-| **S2J Video Publisher Service** | Composer サービス | [s2j-video-publisher-service](https://github.com/stein2nd/s2j-video-publisher-service) | YouTube に動画をアップロードする際、限定公開の公開期間を設定する。(WP 非依存) |
+| **S2J Video Publisher** | WP プラグイン | [s2j-video-publisher](https://github.com/stein2nd/s2j-video-publisher) | YouTube の限定公開の公開期間。仕様は [specs.md](https://github.com/stein2nd/s2j-video-publisher/blob/main/docs_mod/specs.md) |
+| **S2J Content Dates** | WP プラグイン | [s2j-content-dates](https://github.com/stein2nd/s2j-content-dates) | 公開日と更新日の表示。仕様は [specs.md](https://github.com/stein2nd/s2j-content-dates/blob/main/docs_mod/specs.md) |
+| **S2J Content Dates Service** | Composer サービス | [s2j-content-dates-service](https://github.com/stein2nd/s2j-content-dates-service) | 公開日・更新日の算出 (WP 非依存)。仕様は [service_spec.md](https://github.com/stein2nd/s2j-content-dates-service/blob/main/docs_mod/service_spec.md) |
+| **S2J Query Pinned** | WP プラグイン | [s2j-query-pinned](https://github.com/stein2nd/s2j-query-pinned) | 一覧の先頭にピン留めを置く。仕様は [specs.md](https://github.com/stein2nd/s2j-query-pinned/blob/main/docs_mod/specs.md) |
+| **S2J Query Pinned Service** | Composer サービス | [s2j-query-pinned-service](https://github.com/stein2nd/s2j-query-pinned-service) | ピン優先 + 残り N 件の組立 (WP 非依存)。仕様は [service_spec.md](https://github.com/stein2nd/s2j-query-pinned-service/blob/main/docs_mod/service_spec.md) |
+| **S2J Inquiry Destination** | WP プラグイン | [s2j-inquiry-destination](https://github.com/stein2nd/s2j-inquiry-destination) | 問い合わせの送信先。フォームは Snow Monkey Forms。仕様は [specs.md](https://github.com/stein2nd/s2j-inquiry-destination/blob/main/docs_mod/specs.md) |
+| **S2J Inquiry Destination Service** | Composer サービス | [s2j-inquiry-destination-service](https://github.com/stein2nd/s2j-inquiry-destination-service) | 問い合わせ送信先のコンセント変換 (WP 非依存)。仕様は [service_spec.md](https://github.com/stein2nd/s2j-inquiry-destination-service/blob/main/docs_mod/service_spec.md) |
+| **S2J Video Publisher Service** | Composer サービス | [s2j-video-publisher-service](https://github.com/stein2nd/s2j-video-publisher-service) | 限定公開の公開期間のリクエスト組立 (WP 非依存)。仕様は [service_spec.md](https://github.com/stein2nd/s2j-video-publisher-service/blob/main/docs_mod/service_spec.md) |
 | **S2J Webinar** | WP プラグイン | [s2j-webinar](https://github.com/stein2nd/s2j-webinar) | GatherPress のコンパニオン。イベント UI は [GatherPress フォーク](https://github.com/stein2nd/gatherpress)。kis-event-manager 後継の呼び出し側。仕様は [specs.md](https://github.com/stein2nd/s2j-webinar/blob/main/docs_mod/specs.md) |
 | **S2J Webinar Service** | Composer サービス | [s2j-webinar-service](https://github.com/stein2nd/s2j-webinar-service) | Zoom Webinar の作成・更新のリクエスト組立 (WP 非依存)。仕様は [service_spec.md](https://github.com/stein2nd/s2j-webinar-service/blob/main/docs_mod/service_spec.md) |
 
