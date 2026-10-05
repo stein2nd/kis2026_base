@@ -2,6 +2,12 @@
 
 ## unreleased
 
+## 1.0.6 - 2026-10-05
+
+### Changed
+
+* ドキュメントの表記を調整 (`README.md`、`docs/spec.md`、`docs_mod/THEME_SPEC_SPLIT_PROPOSAL.md`。textlint 向けに「以下」を「下記」へ統一、提案表の区切りを整理)
+
 ## 1.0.6 - 2026-10-04
 
 ### Changed
