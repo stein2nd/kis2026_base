@@ -47,7 +47,7 @@
 本テーマは **見た目、FSE テンプレート** に専念し、コンテンツ構造・フォーム・横断ロジックは **KIS WordPress エコシステム** (プラグイン群) に委譲します。
 
 **プラグイン仕様の正:** [KIS WordPress > docs_mod/specs.md](https://github.com/stein2nd/kis-wordpress/blob/main/docs_mod/specs.md)  
-(確定後は同 repo の `docs/` 配下へ分割移行を予定)
+(確定後は同 repo の `docs/` 配下に分割移行を予定)
 
 #### 1.5.1. KIS WordPress モノレポ (サイト専用)
 
@@ -80,6 +80,8 @@
 | **S2J Video Publisher Service** | Composer サービス | [s2j-video-publisher-service](https://github.com/stein2nd/s2j-video-publisher-service) | 限定公開の公開期間のリクエスト組立 (WP 非依存)。仕様は [service_spec.md](https://github.com/stein2nd/s2j-video-publisher-service/blob/main/docs_mod/service_spec.md) |
 | **S2J Webinar** | WP プラグイン | [s2j-webinar](https://github.com/stein2nd/s2j-webinar) | GatherPress のコンパニオン。イベント UI は [GatherPress フォーク](https://github.com/stein2nd/gatherpress)。kis-event-manager 後継の呼び出し側。仕様は [specs.md](https://github.com/stein2nd/s2j-webinar/blob/main/docs_mod/specs.md) |
 | **S2J Webinar Service** | Composer サービス | [s2j-webinar-service](https://github.com/stein2nd/s2j-webinar-service) | Zoom Webinar の作成・更新のリクエスト組立 (WP 非依存)。仕様は [service_spec.md](https://github.com/stein2nd/s2j-webinar-service/blob/main/docs_mod/service_spec.md) |
+| **S2J Webinar Survey** | WP プラグイン | [s2j-webinar-survey](https://github.com/stein2nd/s2j-webinar-survey) | ウェビナーのアンケート設問。仕様は [specs.md](https://github.com/stein2nd/s2j-webinar-survey/blob/main/docs_mod/specs.md) |
+| **S2J Webinar Survey Service** | Composer サービス | [s2j-webinar-survey-service](https://github.com/stein2nd/s2j-webinar-survey-service) | 設問文書の検査と助言、下書きの依頼文 (WP 非依存)。仕様は [service_spec.md](https://github.com/stein2nd/s2j-webinar-survey-service/blob/main/docs_mod/service_spec.md) |
 
 #### 1.5.3. 既存 S2J プラグイン (連携)
 

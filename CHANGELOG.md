@@ -2,20 +2,28 @@
 
 ## unreleased
 
-## 1.0.6 - 2026-10-05
+## 1.0.5 - 2026-10-06
 
 ### Changed
 
-* ドキュメントの表記を調整 (`README.md`、`docs/spec.md`、`docs_mod/THEME_SPEC_SPLIT_PROPOSAL.md`。textlint 向けに「以下」を「下記」へ統一、提案表の区切りを整理)
+* `package.json`、`style.css`、`package-lock.json` の version を1.0.5に同期
+* `docs/spec.md` §1.5.2を更新 (S2J Webinar Survey と S2J Webinar Survey Service を索引に追加)
+* ドキュメントの表記を調整 (`docs/spec.md`、`docs_mod/THEME_SPEC_SPLIT_PROPOSAL.md`、`docs_mod/wordpress_maintenance_spec.md`。「へ」を「に」に統一)
 
-## 1.0.6 - 2026-10-04
+## 1.0.5 - 2026-10-05
+
+### Changed
+
+* ドキュメントの表記を調整 (`README.md`、`docs/spec.md`、`docs_mod/THEME_SPEC_SPLIT_PROPOSAL.md`。textlint 向けに「以下」を「下記」に統一、提案表の区切りを整理)
+
+## 1.0.5 - 2026-10-04
 
 ### Changed
 
 * `@s2j/docs-linter` を v1.0.27に更新
-* `docs/spec.md` §1.5.2を更新 (呼び出し側の S2J Content Dates、S2J Query Pinned、S2J Inquiry Destination を追加。備考を各 repo の仕様へリンク)
+* `docs/spec.md` §1.5.2を更新 (呼び出し側の S2J Content Dates、S2J Query Pinned、S2J Inquiry Destination を追加。備考を各 repo の仕様にリンク)
 
-## 1.0.6 - 2026-10-03
+## 1.0.5 - 2026-10-03
 
 ### Changed
 
@@ -25,24 +33,22 @@
 * `.vscode/settings.json` の `npm.enableScriptExplorer` を `json.schemaDownload.enable` に変更
 * `docs/spec.md` §1.5.2を更新 (S2J Media Library Date Corrector、S2J Video Publisher、S2J Video Publisher Service を索引に追加)
 
-## 1.0.6 - 2026-10-02
+## 1.0.5 - 2026-10-02
 
 ### Changed
 
 * `docs_mod/wordpress_maintenance_spec.md` に節を追加 (情報源、バックアップとローカル試作、メディアの登録とファイル、ユーザー権限と公開前チェック)
 
-## 1.0.6 - 2026-10-01
+## 1.0.5 - 2026-10-01
 
 ### Added
 
 * `docs_mod/wordpress_maintenance_spec.md` を追加 (クラシックテーマ `kix` からブロックテーマに移したとき、保守のどこが楽になり、何が残るかを営業スタッフ向けに説明)
 
-## 1.0.6 - 2026-09-29
+## 1.0.5 - 2026-09-29
 
 ### Changed
 
-* `package.json` Version を v1.0.6に更新
-* `style.css` と `package-lock.json` の version を1.0.6に同期
 * `docs/spec.md` §1.5.2を更新 (`S2J Legal` を `S2J Site Policy Manager` に改称。リポジトリは `s2j-site-policy-manager`、備考はポリシー台帳)
 
 ## 1.0.5 - 2026-09-29
