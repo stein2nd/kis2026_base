@@ -2,6 +2,14 @@
 
 ## unreleased
 
+## 1.0.6 - 2026-10-08
+
+### Changed
+
+* `package.json` Version を v1.0.6に更新
+* `style.css` と `package-lock.json` の version を1.0.6に同期
+* ドキュメントの表記を調整 (`docs/spec.md`、`docs_mod/THEME_SPEC_SPLIT_PROPOSAL.md`、`docs_mod/wordpress_maintenance_spec.md`。textlint 向けに「とき」を「場合」等に統一)
+
 ## 1.0.5 - 2026-10-06
 
 ### Changed
@@ -43,7 +51,7 @@
 
 ### Added
 
-* `docs_mod/wordpress_maintenance_spec.md` を追加 (クラシックテーマ `kix` からブロックテーマに移したとき、保守のどこが楽になり、何が残るかを営業スタッフ向けに説明)
+* `docs_mod/wordpress_maintenance_spec.md` を追加 (クラシックテーマ `kix` からブロックテーマに移した場合、保守のどこが楽になり、何が残るかを営業スタッフ向けに説明)
 
 ## 1.0.5 - 2026-09-29
 

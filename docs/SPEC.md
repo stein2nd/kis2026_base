@@ -101,7 +101,7 @@
 
 #### 1.5.5. テーマ側の責務 (参考)
 
-本テーマが担うのは次に限ります。詳細は上記 KIS WordPress 仕様を参照してください。
+本テーマが担うのは、下記に限ります。詳細は上記 KIS WordPress 仕様を参照してください。
 
 * `theme.json`、`templates/`、`parts/`、`patterns/`
 * SCSS / ブロックの見た目
