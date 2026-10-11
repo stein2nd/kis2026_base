@@ -2,6 +2,12 @@
 
 ## unreleased
 
+## 1.0.6 - 2026-10-11
+
+### Changed
+
+* 開発用 npm モジュールを更新 (Vite v8.3.4、Rollup v4.64.5、Prettier v3.9.10、TypeScript ESLint v8.71.1 等)
+
 ## 1.0.6 - 2026-10-08
 
 ### Changed
