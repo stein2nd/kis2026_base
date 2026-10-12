@@ -2,6 +2,12 @@
 
 ## unreleased
 
+## 1.0.6 - 2026-10-12
+
+### Changed
+
+* `tsconfig.json` のパスエイリアスを TypeScript v7向けに調整 (`baseUrl` を削除し、`paths` を `./` 相対指定に変更)
+
 ## 1.0.6 - 2026-10-11
 
 ### Changed

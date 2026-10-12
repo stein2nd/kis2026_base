@@ -26,13 +26,12 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
 
-    /* ===== パスエイリアス ===== */
-    "baseUrl": ".",
+    /* ===== パスエイリアス (TS 7: baseUrl なし・paths は ./ 相対) ===== */
     "paths": {
-      "@/*": ["src/*"],
-      "@scripts/*": ["src/scripts/*"],
-      "@styles/*": ["src/styles/*"],
-      "@types/*": ["src/types/*"]
+      "@/*": ["./src/*"],
+      "@scripts/*": ["./src/scripts/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@types/*": ["./src/types/*"]
     },
 
     /* ===== 型定義 ===== */
